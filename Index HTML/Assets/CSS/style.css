@@ -1,0 +1,401 @@
+
+/* Global variables for ByteMart+ branding */
+:root {
+    --byte-blue: #0073e6; /* Deep ByteMart Blue */
+    --byte-orange: #ff8000; /* Updated Bright ByteMart Orange (for CTAs) */
+    --whatsapp-green: #25D366; /* New WhatsApp Green */
+    --text-dark: #333;
+    --text-light: #f4f4f4; /* Updated off-white background color */
+    --background-gray: #f9f9f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--text-light); /* Using the new off-white background */
+    line-height: 1.6;
+}
+
+/* --- HEADER AND NAVIGATION --- */
+header {
+    background-color: var(--byte-blue); /* Updated to solid blue background */
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    border-bottom: none; /* Remove previous border */
+}
+
+.logo-container {
+    margin-bottom: 15px;
+}
+
+.logo {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: white; /* Logo text color */
+}
+
+.logo span {
+    color: var(--byte-orange); /* Orange accent for the '+' */
+}
+
+.tagline {
+    font-size: 0.9em;
+    opacity: 0.8;
+    margin-top: -5px;
+}
+
+nav {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 10px;
+}
+
+nav a {
+    color: white; /* Nav links are white on blue background */
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 15px;
+    margin: 0 5px;
+    display: inline-block;
+    transition: color 0.2s, background-color 0.2s;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    color: var(--byte-orange);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- HERO ZONE (Image as Background) --- */
+.hero-zone {
+    /* 1. The Gradient Overlay (Original Colors, 50% Opacity) */
+    background-image: 
+        linear-gradient(to right, 
+            rgba(0, 115, 230, 0.5), /* Byte Blue 50% opacity */
+            rgba(0, 170, 255, 0.5)  /* Lighter Blue 50% opacity */
+        ), 
+        
+        /* NOTE: Assuming CSS is in 'assets/css/', the relative path is: */
+        url("../images/Banner.png"); 
+    
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat;
+    
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    margin-bottom: 40px;
+    position: relative; 
+}
+
+.hero-zone h2 {
+    font-size: 3em; /* Restoring original size for impact */
+    margin-bottom: 10px;
+}
+
+.hero-zone p {
+    font-size: 1.2em; /* Restoring original size */
+    margin: 10px auto 20px;
+    max-width: 600px;
+}
+
+.hero-whatsapp-btn {
+    display: inline-block;
+    background-color: var(--byte-orange);
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background-color 0.2s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.hero-whatsapp-btn:hover {
+    background-color: #e66900;
+    transform: translateY(-2px);
+}
+
+/* --- CATALOG SECTION & GRID --- */
+.catalog-section {
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    padding: 0 20px;
+}
+
+.catalog-section h3 {
+    text-align: center;
+    font-size: 2.5em; /* Restoring original size */
+    color: var(--byte-blue);
+    margin: 40px 0 25px;
+    font-weight: 700;
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; 
+}
+
+/* --- PRODUCT CARD STYLES --- */
+.product-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    text-align: center;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    background-color: var(--background-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 20px;
+}
+
+.card-details {
+    padding: 15px;
+    flex-grow: 1; 
+}
+
+.product-name {
+    font-size: 1.4em; /* Restoring size */
+    color: var(--byte-blue);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.product-specs {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 1.8em; /* Restoring size */
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.card-actions {
+    padding: 0 15px 15px;
+    margin-top: auto; 
+}
+
+.order-button {
+    display: block; 
+    width: 100%; /* Button fills the width of the card action area */
+    background-color: var(--byte-orange);
+    color: var(--text-light);
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.order-button:hover {
+    background-color: #e66900;
+}
+
+/* --- LEGAL CONTENT PAGE STYLES (UPDATED) --- */
+.legal-content {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Ensure the text inside is left-aligned, overriding any body-level centering */
+    text-align: left; 
+}
+
+.legal-content h1 {
+    font-size: 2.5em;
+    color: var(--byte-blue);
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--byte-orange);
+    text-align: center; /* Center the main title for better aesthetics */
+}
+
+.legal-content h2 {
+    font-size: 1.8em;
+    color: var(--text-dark);
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.legal-content p {
+    /* Explicitly setting text alignment for readability */
+    text-align: justify; 
+    margin-bottom: 15px;
+    font-size: 1em;
+    line-height: 1.7;
+    color: #555;
+}
+
+.legal-content .effective-date {
+    font-style: italic;
+    color: #888;
+    margin-bottom: 30px;
+    text-align: center; /* Center the effective date */
+}
+
+
+/* --- FOOTER STYLES --- */
+.site-footer {
+    background-color: #222; 
+    color: #ccc;
+    font-size: 0.9em;
+    padding-top: 40px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 30px;
+    display: flex;
+    flex-wrap: wrap; 
+    /* FIX: Changed from space-between to flex-start to cluster columns */
+    justify-content: flex-start; 
+    gap: 30px;
+}
+
+.footer-col {
+    width: 200px; 
+}
+
+.brand-info {
+    width: 300px; 
+}
+
+.footer-col h3 {
+    color: var(--byte-orange); 
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.footer-col h4 {
+    color: var(--text-light); 
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--byte-orange); 
+    display: inline-block;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-col a:hover {
+    color: var(--byte-orange);
+}
+
+.contact-detail p {
+    margin-bottom: 5px;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding: 15px 20px;
+    text-align: center;
+    background-color: #1a1a1a;
+}
+
+.social-links a {
+    color: #ccc;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.social-links a:hover {
+    color: var(--byte-orange);
+}
+
+.copyright {
+    margin-top: 10px;
+    font-size: 0.8em;
+}
+
+
+/* --- MEDIA QUERIES (Responsiveness) --- */
+@media (max-width: 768px) {
+    .hero-zone h2 {
+        font-size: 2.2em;
+    }
+
+    .hero-zone p {
+        font-size: 1em;
+    }
+
+    nav a {
+        display: block;
+        margin: 5px 0;
+    }
+    
+    /* Footer responsiveness */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-col {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .footer-col h4 {
+        border-bottom: none; 
+    }
+    
+    .legal-content {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+}
