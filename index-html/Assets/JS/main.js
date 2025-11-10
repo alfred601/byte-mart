@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const productName = card?.querySelector('.product-title')?.textContent || 'Unknown Product';
         const productPrice = card?.querySelector('.product-price')?.textContent || 'Price Unknown';
         
-        const message = `Hello ByteMart+! I would like to order the **${productName}** priced at ${productPrice}.`;
+        const message = `Hello ByteMart+! I would like to order the ${productName} priced at ${productPrice}.`;
         
         // Pre-fill the WhatsApp message and link to the dedicated WhatsApp contact
         const whatsappLink = `https://wa.me/256779315934?text=${encodeURIComponent(message)}`;
