@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteMart+ | Tech Blog & News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Assets/CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        // Check local storage for theme preference
+        const savedTheme = localStorage.getItem('theme') || 'light-mode';
+        document.documentElement.className = savedTheme;
+        if (savedTheme === 'dark-mode') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+
+        // 1. Function to set the current date automatically
+        function setDynamicDate() {
+            const dateElements = document.querySelectorAll('.dynamic-date');
+            const now = new Date();
+            // Get Month name (e.g., Nov) and Day (e.g., 09) and Year (e.g., 2025)
+            const options = { month: 'short', day: 'numeric', year: 'numeric' };
+            const formattedDate = now.toLocaleDateString('en-US', options);
+
+            dateElements.forEach(el => {
+                el.textContent = formattedDate;
+            });
+        }
+        
+        // Run the function when the page loads
+        document.addEventListener('DOMContentLoaded', setDynamicDate);
+    </script>
+
+    <style>
+        /* --- CORE BLOG STYLES --- */
+        
+        /* Blog Header to use the requested dark blue-teal color */
+        .blog-header {
+            background: #3e5870; 
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .blog-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .blog-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .blog-content {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* --- Blog Section Titles (H2) Color --- */
+        .blog-section-title {
+            font-size: 2.2rem; 
+            margin-bottom: 30px; 
+            /* Set to Blue */
+            color: #0473d5; 
+        }
+        
+        /* Ensure H2 titles remain blue in dark mode for consistency */
+        html[data-theme="dark"] .blog-section-title, .dark-mode .blog-section-title {
+            color: #0473d5; 
+        }
+        /* --- End Blog Section Title Color --- */
+
+        
+        /* --- FEATURED SECTION (Large article container) --- */
+        .featured-article {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 60px;
+            padding: 30px;
+            border-radius: 12px;
+            /* LIGHT MODE: White accent */
+            background-color: #ffffff; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            color: var(--color-text, #354451); /* Default text color for light mode */
+        }
+        
+        /* Dark mode: Background remains the requested dark blue-teal */
+        html[data-theme="dark"] .featured-article, .dark-mode .featured-article {
+            background-color: #3e5870;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+            color: white; /* Text must be white on dark background */
+        }
+
+        .featured-img-container {
+            overflow: hidden;
+            border-radius: 8px;
+            width: 100%;
+            padding-top: 100%; /* 1:1 Aspect Ratio */
+            position: relative;
+        }
+        
+        .featured-article img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .featured-article:hover img {
+            transform: scale(1.03);
+        }
+        
+        /* --- FEATURED TEXT ADJUSTMENTS (LEFT ALIGNED) --- */
+        .featured-text {
+            display: flex; 
+            flex-direction: column;
+            justify-content: space-between; 
+            padding: 0; 
+        }
+
+        /* Featured H2 Title color set to Orange */
+        .featured-text h2 {
+            font-size: 2rem;
+            color: #fb7420; /* Set to Orange as requested */
+            margin-bottom: 15px;
+            line-height: 1.3;
+            text-align: left; 
+        }
+        
+        /* Ensure H2 text is orange in dark mode as well */
+        html[data-theme="dark"] .featured-text h2, .dark-mode .featured-text h2 {
+             color: #fb7420;
+        }
+
+        /* Featured Meta text color */
+        .featured-text .meta {
+            text-align: left; 
+            color: #fb7420; /* Use Orange Accent */
+            margin-bottom: 10px;
+        }
+
+        /* Dark Mode Meta Text Override */
+        html[data-theme="dark"] .featured-text .meta, .dark-mode .featured-text .meta {
+             color: #ffffff; /* White text on dark background */
+        }
+        
+        .featured-text p {
+            margin-bottom: 30px; 
+            text-align: left; 
+            /* Text color adjusted for light mode */
+            color: var(--color-text-faded, #555); 
+        }
+
+        html[data-theme="dark"] .featured-text p, .dark-mode .featured-text p {
+            color: #f0f0f0; /* Light text for readability on dark background */
+        }
+        
+        .featured-text .back-to-shop-btn {
+            align-self: flex-start; 
+            margin-top: 15px; 
+        }
+        /* --- END FEATURED TEXT ADJUSTMENTS --- */
+        
+        .back-to-shop-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--color-primary-accent, #fb7420); /* Orange Accent */
+            color: white;
+            text-decoration: none;
+            border-radius: 50px; 
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .back-to-shop-btn:hover {
+            background-color: var(--color-secondary, #0473d5); /* Secondary Blue on hover */
+        }
+        
+        /* --- LATEST ARTICLES GRID --- */
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .article-card {
+            border-radius: 10px;
+            /* Light mode: default white card */
+            background-color: var(--color-card-bg, #ffffff);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        
+        /* UPDATED: Dark mode article card matches featured container color */
+        html[data-theme="dark"] .article-card, .dark-mode .article-card {
+            background-color: #3e5870; /* Matches the featured-article dark mode background */
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+            color: #f0f0f0; /* Set default text color for readability */
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 1:1 Aspect Ratio for Grid Images */
+        .article-card-img-wrapper {
+            width: 100%;
+            padding-top: 100%; /* 1:1 Aspect Ratio */
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .article-card img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .article-info {
+            padding: 20px;
+        }
+        
+        /* UPDATED: Article card H3 color set to Orange in Light Mode */
+        .article-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #fb7420; /* Orange for light mode */
+        }
+        
+        /* UPDATED: Article card H3 color set to Orange in Dark Mode */
+        html[data-theme="dark"] .article-info h3, .dark-mode .article-info h3 {
+            color: #fb7420; /* Orange for dark mode */
+        }
+        
+        .article-info .meta {
+            font-size: 0.85rem;
+            color: var(--color-text-faded, #777);
+            margin-bottom: 15px;
+        }
+        
+        /* Ensure meta text is light on the dark card background */
+        html[data-theme="dark"] .article-info .meta, .dark-mode .article-info .meta {
+            color: #c0c0c0; 
+        }
+
+        .article-info .meta i {
+            margin-right: 5px;
+        }
+
+        /* --- WHATSAPP INQUIRY BUTTON --- */
+        .inquiry-btn-container {
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .inquiry-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #25D366; /* WhatsApp Green */
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
+            transition: background-color 0.3s;
+        }
+        
+        .inquiry-btn:hover {
+            background-color: #128C7E;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .featured-article {
+                grid-template-columns: 1fr 1.5fr; /* Image on left, text on right */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                ByteMart<span class="logo-plus">+</span>
+                <p class="tagline">Tech Made Simple</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#phones">Phones</a></li>
+                    <li><a href="index.html#accessories">Accessories</a></li>
+                    <li><a href="news.html">Blog & News</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <div class="search-bar rounded-search">
+                    <input type="text" id="search-input" placeholder="Search anything Phones, Accessories....">
+                    <button class="search-btn"></button>
+                </div>
+                <button id="theme-toggle" class="theme-toggle futuristic-toggle" aria-label="Toggle dark and light mode">
+                    <i class="fas fa-sun sun-icon"></i>
+                    <i class="fas fa-moon moon-icon"></i>
+                </button>
+            </div>
+        </div>
+        <div id="search-results" class="container" style="display: none; padding-top: 20px; padding-bottom: 20px;">
+            <h2 style="text-align: left; margin-bottom: 15px; font-size: 1.8rem;" id="search-results-title">Search Results</h2>
+            <div class="product-grid" id="search-results-grid">
+                </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="blog-header">
+            <div class="container">
+                <h1>ByteMart+ Tech News</h1>
+                <p>Latest Reviews, Smartphone Releases, and Gadget News in Uganda.</p>
+            </div>
+        </section>
+
+        <section class="blog-content">
+            
+            <h2 class="blog-section-title">Featured Story</h2>
+
+            <article class="featured-article">
+                <div class="featured-img-container">
+                    
+                    <img src="Assets/images/flexible screens.jpg" alt="Featured Article Image: New Smartphone Launch (1:1)">
+                </div>
+                <div class="featured-text">
+                    <div class="meta">
+                        <i class="far fa-calendar-alt"></i> <span class="dynamic-date">Date Loading...</span> | <i class="fas fa-user-edit"></i> ByteMart+ Team
+                    </div>
+                    <h2>The Foldable Revolution: Why 2026 is the Year for Flexible Screens</h2>
+                    <p>Foldable phones are no longer a niche luxury; they are becoming a viable alternative to traditional flagships. We break down the latest advancements 
+                    in hinge technology, display durability, and battery life that are making the newest Z-series 
+                    and Flip devices the must-have gadget of the year. Read more below on the future of mobile 
+                    technology...</p>
+                    
+                    <a href="index.html" class="back-to-shop-btn">
+                        <i class="fas fa-shopping-cart"></i> Back to Shopping
+                    </a>
+                </div>
+            </article>
+
+            <h2 class="blog-section-title">Latest Releases & Reviews</h2>
+            <div class="article-grid">
+                
+                <a href="#" class="article-card">
+                    <div class="article-card-img-wrapper">
+                        
+                        <img src="Assets/images/500k Phones.jpg" alt="Image of a budget smartphone review (1:1)">
+                    </div>
+                    <div class="article-info">
+                        <div class="meta"><i class="far fa-calendar-alt"></i> <span class="dynamic-date">Date Loading...</span></div>
+                        <h3>Review: The Best Budget Smartphone Under UGX 500,000 in Uganda</h3>
+                        <p>We test out the top 3 budget phones available right now and find a clear winner for battery life and camera quality...</p>
+                    </div>
+                </a>
+
+                <a href="#" class="article-card">
+                    <div class="article-card-img-wrapper">
+                        
+                        <img src="Assets/images/Noise Cancelling.jpg" alt="Image of noise-canceling earbuds (1:1)">
+                    </div>
+                    <div class="article-info">
+                        <div class="meta"><i class="far fa-calendar-alt"></i> <span class="dynamic-date">Date Loading...</span></div>
+                        <h3>Accessory Alert: Are Noise-Cancelling Earbuds Worth the Price Tag?</h3>
+                        <p>From the taxi to the office, noise cancellation is a game-changer. Here are the top 5 accessories you need right now...</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="article-card">
+                    <div class="article-card-img-wrapper">
+                        
+                        <img src="Assets/images/tech.jpg" alt="Image of an Android/iOS operating system interface (1:1)">
+                    </div>
+                    <div class="article-info">
+                        <div class="meta"><i class="far fa-calendar-alt"></i> <span class="dynamic-date">Date Loading...</span></div>
+                        <h3>Tech Tip: 5 Features in the New OS Update You Must Try Today</h3>
+                        <p>Don't miss out on the latest security patches and productivity tools in the newest Android and iOS releases...</p>
+                    </div>
+                </a>
+
+            </div> 
+            
+            <div class="inquiry-btn-container">
+                    <a href="https://wa.me/256705041411" target="_blank" class="inquiry-btn">
+                        <i class="fab fa-whatsapp"></i> Orders & Inquiries on WhatsApp
+                    </a>
+            </div>
+            
+        </section>
+    </main>
+
+    <footer>
+        <div class="contact-section" id="contact">
+            <div class="contact-grid-full"> 
+                <div class="contact-info-block container"> <div class="contact-info-content"> <h2 style="color: white;">Get in Touch</h2>
+                        <p style="color: white;">Ready to Purchase an item or you want to inquire reach out to us.</p>
+                        <a href="https://wa.me/256705041411" target="_blank" class="btn secondary-btn chat-btn" style="background-color: #fb7420; color: white;">CHAT WITH US</a>
+                    </div>
+                </div>
+                <div class="contact-image-placeholder">
+                    <img src="Assets/images/customer service.jpg" alt="Customer support representative with a headset" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+
+        <div class="main-footer">
+            <div class="container footer-grid">
+                
+                <div class="footer-col brand-info">
+                    
+                    <div class="logo footer-logo">
+                        ByteMart<span class="logo-plus">+</span>
+                    </div>
+                    <p class="tagline-footer">Tech Made Simple. Your trusted source for the latest phones and accessories in Uganda.</p>
+                    
+                    <h3 class="footer-col-title contact-heading">Get in Touch</h3>
+                    
+                    <div class="contact-inline-group">
+                        <span>Email: <a href="mailto:bytemartug@gmail.com" class="footer-link">bytemartug@gmail.com</a></span>
+                        <span class="separator"> | </span>
+                        <span>Call Us: <a href="tel:+256705041411" class="footer-link">+256705041411</a></span>
+                        <span class="separator"> | </span>
+                        <span>WhatsApp Us: <a href="https://wa.me/256779315934" target="_blank" class="footer-link">+256779315934</a></span>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-col-title">Quick Links</h3>
+                    <ul>
+                        <li><a href="#hero-section" class="footer-link">Home</a></li>
+                        <li><a href="#products" class="footer-link">All Products</a></li>
+                        <li><a href="#about" class="footer-link">About Us</a></li>
+                        <li><a href="#contact" class="footer-link">Contact</a></li>
+                         <li><a href="news.html" class="footer-link">Blog & News</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-col-title">Legal & Policies</h3>
+                    <ul>
+                        <li><a href="terms.html" class="footer-link">Terms & Conditions</a></li>
+                        <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="shipping.html" class="footer-link">Shipping & Delivery</a></li>
+                        <li><a href="returns.html" class="footer-link">Returns & Exchange</a></li>
+                        <li><a href="payment.html" class="footer-link">Payment Methods</a></li>
+                        <li><a href="faq.html" class="footer-link">FAQ</a></li>
+                    </ul>
+                </div>
+                
+            </div> 
+            </div> <div class="footer-bottom">
+        <div class="social-links-container">
+            <a href="https://www.tiktok.com/@bytemartug?_r=1&_t=ZM-91AaSx4SEKe" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/ByteMartUG?t=SZDLdSw6kAMF5B9GpE1fRg&s=09" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/bytemartug?igsh=czJmNjI4ancyZTA4" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://whatsapp.com/channel/0029Vb71CnjA2pLGjsQqC81J" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
+                <p>&copy; <span id="current-year">2024</span> ByteMart+. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="Assets/JS/main.js"></script>
+</body>
+</html>

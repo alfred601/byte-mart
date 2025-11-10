@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ByteMart+ | Terms and Conditions</title>
+    <title>ByteMart+ | Returns & Exchange Policy</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Assets/CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -21,14 +21,13 @@
 
     <style>
         /*
-         * HEADER STYLING (Full-width banner from image_e14e92.png)
+         * HEADER STYLING (Matching the FAQ page header)
          */
         .policy-header {
             background: #3e5870; /* Dark blue-teal color */
             color: white;
             padding: 60px 0;
-            /* Confirmed: text-align center ensures the main heading is centered */
-            text-align: center; 
+            text-align: center;
         }
 
         .policy-header h1 {
@@ -42,16 +41,17 @@
             opacity: 0.9;
         }
         
-        /* * CORE T&C CONTENT STYLES (Matching the FAQ.html structure) 
+        /* * CORE POLICY CONTENT STYLES (Matching the FAQ.html structure) 
          */
         
-        .terms-content {
-            padding: 40px 20px 60px 20px; 
+        .faq-content {
+            /* Adjusted: Reduce padding-top to move content up */
+            padding: 20px 20px 60px 20px; 
             max-width: 900px;
             margin: 0 auto;
         }
 
-        .terms-container {
+        .faq-container {
             padding: 40px; 
             border-radius: 12px; 
             /* LIGHT MODE: Default white background */
@@ -59,37 +59,23 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
         }
 
-        /* FIX: Dark Mode Container: Ensure it uses the specified dark blue color #3e5870 */
-        html[data-theme="dark"] .terms-container, .dark-mode .terms-container {
+        /* Dark Mode Container: Ensure it uses the specified dark blue color #3e5870 */
+        html[data-theme="dark"] .faq-container, .dark-mode .faq-container {
             background-color: #3e5870; 
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); 
             color: white; /* Ensure all text inside is white by default */
         }
         
-        /* Main Introduction Text */
-        .intro-text {
-            margin-bottom: 30px;
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: var(--color-text, #354451);
-        }
-        
-        /* Dark mode introduction text color */
-        html[data-theme="dark"] .intro-text, .dark-mode .intro-text {
-             color: #e0e0e0; 
-        }
-
-        /* Section Title Styling (Modified to center the text and icon) */
+        /* Section Title Styling (Matching FAQ style) */
         .section-title {
             font-size: 1.8rem;
-            /* FORCE ORANGE */
-            color: #fb7420;
+            color: #fb7420; /* Orange accent */
             border-bottom: 2px solid var(--color-border, #ddd);
             padding-bottom: 10px;
-            margin-top: 50px; 
+            /* Adjusted: Reduce margin-top to move headings up */
+            margin-top: 30px; 
             margin-bottom: 30px;
-            /* NEW: Center the heading content (icon + text) */
-            text-align: center; 
+            text-align: center; /* Centered as per the T&C update */
         }
         
         .section-title i {
@@ -97,9 +83,8 @@
             color: #fb7420;
         }
         
-        /* Dark Mode override for section title border and color */
+        /* Dark Mode override for section title border */
         html[data-theme="dark"] .section-title, .dark-mode .section-title {
-            color: #fb7420;
             border-bottom: 2px solid rgba(255, 255, 255, 0.3); 
         }
 
@@ -112,10 +97,10 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
 
-        /* FIX: Dark Mode override for accordion item (Matching image_eb3bff.png style - dark background, white text) */
+        /* Dark Mode override for accordion item (Dark background, white text) */
         html[data-theme="dark"] .accordion-item, .dark-mode .accordion-item {
             border: 1px solid rgba(255, 255, 255, 0.1); 
-            background-color: rgba(0, 0, 0, 0.2); /* Dark overlay/shade for contrast against container */
+            background-color: rgba(0, 0, 0, 0.2); 
         }
 
         .accordion-item summary {
@@ -125,7 +110,7 @@
             padding: 18px 25px;
             font-weight: 600;
             font-size: 1.1rem;
-            color: var(--color-primary, #354451); /* Light mode text color */
+            color: var(--color-primary, #354451); 
             cursor: pointer;
             list-style: none; 
             position: relative;
@@ -136,7 +121,7 @@
             color: #ffffff; 
         }
 
-        /* Custom toggle icon - set to the fixed orange (Matching FAQ) */
+        /* Custom toggle icon */
         .accordion-item summary::after {
             content: "\f055"; /* Plus icon */
             font-family: "Font Awesome 6 Free";
@@ -158,7 +143,7 @@
             border-radius: 8px 8px 0 0;
         }
         
-        /* Dark Mode adjustments for open state (Matching FAQ) */
+        /* Dark Mode adjustments for open state */
         html[data-theme="dark"] .accordion-item[open] summary, .dark-mode .accordion-item[open] summary {
             background-color: rgba(255, 255, 255, 0.15); 
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -169,25 +154,12 @@
             padding-top: 0;
             font-size: 0.95rem;
             line-height: 1.6;
-            color: var(--color-text-faded, #555); /* Light mode answer text color */
+            color: var(--color-text-faded, #555); 
         }
         
         /* Dark Mode override for answer text */
         html[data-theme="dark"] .accordion-item-body, .dark-mode .accordion-item-body {
             color: #e0e0e0;
-        }
-        
-        /* Inner heading style for 2.1, 3.1, etc. */
-        .accordion-item-body h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-top: 15px;
-            margin-bottom: 5px;
-            color: var(--color-primary, #354451);
-        }
-        
-        html[data-theme="dark"] .accordion-item-body h3, .dark-mode .accordion-item-body h3 {
-            color: white;
         }
         
         .accordion-item-body ul {
@@ -196,17 +168,24 @@
             margin-bottom: 15px;
         }
         
-        /* Ensure links inside accordion bodies are visible */
         .accordion-item-body a {
             color: #fb7420;
         }
         
+        /* General paragraph/link cleanup for the policy content */
+        .policy-intro {
+            padding: 10px 0 20px 0;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            text-align: left;
+            color: var(--color-text);
+        }
+        
         /* ==================================== */
-        /* RESPONSIVENESS (Copied from FAQ) */
+        /* RESPONSIVENESS */
         /* ==================================== */
         @media (max-width: 768px) {
             
-            /* Header Fixes */
             .header-content {
                 flex-wrap: wrap; 
                 justify-content: center;
@@ -235,12 +214,11 @@
                 margin-right: 15px;
             }
             
-            /* Main T&C Content Fixes */
-            .terms-content {
+            .faq-content {
                 padding: 30px 10px; 
             }
 
-            .terms-container {
+            .faq-container {
                 padding: 20px; 
             }
             
@@ -256,7 +234,6 @@
                 font-size: 1.5rem;
             }
             
-            /* Adjust accordion font size */
             .accordion-item summary {
                 font-size: 1rem;
                 padding: 15px 20px;
@@ -304,107 +281,96 @@
     </header>
 
     <main>
-        <!-- Policy Header Section (Main heading is centered via .policy-header CSS) -->
         <section class="policy-header">
             <div class="container">
-                <h1>Terms and Conditions</h1>
-                <p>Governing the use of the ByteMart+ online store and services.</p>
+                <h1>Returns & Exchange Policy</h1>
+                <p>A simple guide to returning, exchanging, or claiming warranty for your purchase.</p>
             </div>
         </section>
         
-        <section class="terms-content">
-            <div class="terms-container">
-                <!-- Introduction Paragraph -->
-                <p class="intro-text">Welcome to ByteMart+ ("we," "our," or "us"). These Terms and Conditions ("Terms") govern your use of the ByteMart+ website and its services, including the sale of mobile phones and accessories in Uganda. By accessing or using our services, you agree to be bound by these Terms.</p>
-                
+        <section class="faq-content">
+            <div class="faq-container">
+                <p class="policy-intro">
+                    At **ByteMart+**, we are committed to providing you with high-quality devices and accessories. We offer a **7-day return and exchange window** from the date your order is delivered, subject to the conditions below.
+                </p>
 
-                <h2 class="section-title"><i class="fas fa-gavel"></i> General Terms of Service</h2>
-                
-                <!-- Accordion Structure Starts Here -->
+                <h2 class="section-title"><i class="fas fa-box-open"></i> Return Eligibility and Process</h2>
                 
                 <details class="accordion-item">
-                    <summary>1. Eligibility and Account</summary>
+                    <summary>What are the conditions for an eligible return?</summary>
                     <div class="accordion-item-body">
-                        <h3>1.1 Eligibility</h3>
-                        <p>You must be at least 18 years old to make a purchase or register an account on ByteMart+. By using the Service, you represent and warrant that you meet this requirement.</p>
-
-                        <h3>1.2 Account Responsibility</h3>
-                        <p>You are responsible for maintaining the confidentiality of your account password and for all activities that occur under your account. You agree to notify us immediately of any unauthorized use of your account.</p>
-                    </div>
-                </details>
-
-                <details class="accordion-item">
-                    <summary>2. Products and Orders (Online-Only Policy)</summary>
-                    <div class="accordion-item-body">
-                        <h3>2.1 Product Descriptions and Availability</h3>
-                        <p>We strive to be as accurate as possible with the product descriptions, pricing, and availability. However, we do not warrant that product descriptions or other content of this Service are entirely accurate, complete, reliable, current, or error-free. All products are sold **strictly online**, and we do not have a physical retail location for product viewing or pickup.</p>
-
-                        <h3>2.2 Pricing and Payment</h3>
-                        <p>All prices are listed in Ugandan Shillings (UGX) unless otherwise stated. We reserve the right to change prices at any time without prior notice. Payment is accepted via **Mobile Money (MTN, Airtel)**, **Bank Transfer**, or **BitCoin**. Our core policy is **Payment is required in full and must be confirmed before any order is packaged or dispatched for delivery**.</p> 
-
-                        <h3>2.3 Order Acceptance and Confirmation</h3>
-                        <p>The confirmation of an order signifies our receipt of your order details. Order acceptance, and thus the creation of a binding contract, occurs only upon **successful confirmation of full payment**. We may, at any time after receipt of your order and payment, decline or place limits on your order for any reason, in which case a full refund will be processed.</p>
-                    </div>
-                </details>
-
-                <h2 class="section-title"><i class="fas fa-shipping-fast"></i> Shipping, Delivery, and Returns</h2>
-
-                <details class="accordion-item">
-                    <summary>3. Shipping and Delivery (Kampala Focus)</summary>
-                    <div class="accordion-item-body">
-                        <h3>3.1 Delivery Times and Scope</h3>
-                        <p>Our operations are majorly concentrated in **Kampala**. Delivery times provided are estimates only. We will communicate expected delivery windows promptly.</p>
-
-                        <h3>3.2 Payment Before Shipment (Fraud Prevention Policy)</h3>
-                        <p>Unless you qualify for the **Cash on Delivery (COD)** exception, all orders must be fully paid and confirmed before we hand the item over to our logistics partner. This process is intended to be **fraud-proof**.</p>
-                        
-                        <h3>3.3 Quick Ship Guarantee (Same Day Shipping)</h3>
-                        <p>Orders paid before **1 PM** are typically shipped the **same business day for Kampala**. This is our **Quick Ship Guarantee**.</p> 
-
-                        <h3>3.4 Risk of Loss and Shipping Fees</h3>
-                        <p>The risk of loss and title for all items purchased passes to you upon our delivery to the carrier (or to you directly for COD). Shipping fees are non-refundable unless the return is due to an error on our part (e.g., wrong item shipped).</p>
-                    </div>
-                </details>
-                
-                <details class="accordion-item">
-                    <summary>4. Returns and Refunds</summary>
-                    <div class="accordion-item-body">
-                        <p>Our detailed **Returns Policy** is incorporated into these Terms by reference. Key points include:</p>
+                        <p>To be eligible for a return or exchange, the item must meet all of the following criteria:</p>
                         <ul>
-                            <li><strong>Exchange Period:</strong> Products may be exchanged within a specified period (typically 3-7 days) if they have a manufacturing defect or do not match the order description.</li>
-                            <li><strong>Condition:</strong> Products must be returned unused and in their original packaging.</li>
-                            <li><strong>Non-Refundable:</strong> We do not offer returns or refunds for buyer's remorse or if the product has been used or opened.</li>
+                            <li>The product must be in the **same condition** that you received it (unused, unmarked, and undamaged).</li>
+                            <li>The product must be in its **original, unopened packaging** with all seals intact.</li>
+                            <li>All original accessories, manuals, and promotional materials must be included.</li>
+                            <li>The return must be initiated and **authorized** by our support team within 7 days of delivery.</li>
+                        </ul>
+                        <p>Returns that do not meet these criteria may be refused or subject to a restocking fee.</p>
+                    </div>
+                </details>
+
+                <details class="accordion-item">
+                    <summary>How do I start a return or exchange?</summary>
+                    <div class="accordion-item-body">
+                        <p>To initiate a return or exchange, you must contact our support team immediately (within the 7-day window) via WhatsApp or email with the following information:</p>
+                        <ul>
+                            <li>**Order Number**</li>
+                            <li>**Product Name and Model**</li>
+                            <li>**Detailed Reason for Return** (e.g., Damaged on arrival, Wrong item sent, Change of mind)</li>
+                        </ul>
+                        <p>Our team will provide you with a return authorization number and instructions on where to send the item. Do not send the item back without authorization.</p>
+                    </div>
+                </details>
+                
+                <h2 class="section-title"><i class="fas fa-receipt"></i> Refunds, Exchanges, and Fees</h2>
+
+                <details class="accordion-item">
+                    <summary>What is the difference between Defective and Change of Mind returns?</summary>
+                    <div class="accordion-item-body">
+                        <h3>Defective or Damaged Products</h3>
+                        <p>If your item arrives damaged or is found to be defective upon initial inspection (within 24 hours of delivery), we will arrange a **free exchange or a full refund**, including any standard shipping charges you paid. You must provide clear photographic or video evidence of the defect.</p>
+                        
+                        <h3>Returns Due to Change of Mind</h3>
+                        <p>Returns for a "change of mind" are accepted only if the item is **unopened and unused** (manufacturer seals must be intact). For this type of return, the customer is responsible for:</p>
+                        <ul>
+                            <li>The cost of returning the item to our facility.</li>
+                            <li>A potential restocking fee of up to 10% of the item's purchase price to cover administration and handling.</li>
                         </ul>
                     </div>
                 </details>
                 
-                <h2 class="section-title"><i class="fas fa-lock"></i> Legal and Final Provisions</h2>
-                
                 <details class="accordion-item">
-                    <summary>5. Intellectual Property</summary>
+                    <summary>Which items are non-returnable?</summary>
                     <div class="accordion-item-body">
-                        <p>All content on the ByteMart+ site, including text, graphics, logos, images, software, and our original **tech reviews**, is the property of ByteMart+ or its suppliers and is protected by international copyright laws. You may not use any content without our express written permission.</p>
+                        <p>The following items are generally **excluded** from our return policy, except in cases of confirmed manufacturing defect upon delivery:</p>
+                        <ul>
+                            <li>Products that have been personalized, registered, or customized.</li>
+                            <li>Items sold specifically as **"Final Sale"** or **"Clearance."**</li>
+                            <li>Any product where the original **manufacturer's security seals have been broken or removed**.</li>
+                            <li>Used screen protectors, worn accessories, or items involving hygiene (e.g., in-ear headphones).</li>
+                        </ul>
                     </div>
                 </details>
-                
+
+                <h2 class="section-title"><i class="fas fa-undo-alt"></i> Post-Return and Warranty</h2>
+
                 <details class="accordion-item">
-                    <summary>6. Limitation of Liability</summary>
+                    <summary>How long does a refund take?</summary>
                     <div class="accordion-item-body">
-                        <p>To the fullest extent permitted by applicable law, ByteMart+ shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, resulting from (a) your access to or use of or inability to access or use the Service; and (b) any unauthorized access to or use of our servers and/or any personal information stored therein.</p>
-                    </div>
-                </details>
-                
-                <details class="accordion-item">
-                    <summary>7. Governing Law and Jurisdiction</summary>
-                    <div class="accordion-item-body">
-                        <p>These Terms shall be governed and construed in accordance with the laws of **Uganda**, without regard to its conflict of law provisions. Any legal action or proceeding arising under these Terms will be brought exclusively in the courts located in Kampala, Uganda.</p>
+                        <p>Once your returned item is received and inspected, we will notify you of the approval or rejection of your refund. Approved refunds will be processed within **3-7 business days** to your original payment method (Mobile Money or Bank Account).</p>
                     </div>
                 </details>
 
                 <details class="accordion-item">
-                    <summary>8. Changes to Terms</summary>
+                    <summary>What is the warranty coverage for your products?</summary>
                     <div class="accordion-item-body">
-                        <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. We will try to provide at least 30 days' notice prior to any new terms taking effect. By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms.</p>
+                        <p>Our 7-day return policy covers initial defects and change-of-mind returns. Beyond this period, product issues are handled under the product's warranty:</p>
+                        <ul>
+                            <li>**Phones:** All brand-new phones come with the **manufacturer's standard warranty** (typically 6-12 months).</li>
+                            <li>**Accessories:** Accessories generally carry a limited 3-month replacement warranty against manufacturing defects.</li>
+                        </ul>
+                        <p>We will assist you in initiating a warranty claim with the manufacturer, if necessary. Warranty terms will be specified on the product page.</p>
                     </div>
                 </details>
                 
@@ -472,7 +438,7 @@
                 </div>
                 
             </div> 
-             </div> <div class="footer-bottom">
+         </div> <div class="footer-bottom">
         <div class="social-links-container">
             <a href="https://www.tiktok.com/@bytemartug?_r=1&_t=ZM-91AaSx4SEKe" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
             <a href="https://x.com/ByteMartUG?t=SZDLdSw6kAMF5B9GpE1fRg&s=09" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>

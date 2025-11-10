@@ -1,342 +1,445 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ByteMart+ | Tech Made Simple</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Assets/CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        // Check local storage for theme preference
+        const savedTheme = localStorage.getItem('theme') || 'light-mode';
+        document.documentElement.className = savedTheme;
+        if (savedTheme === 'dark-mode') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
 </head>
-
 <body>
+
     <header>
-        <div class="logo-container">
-            <h1 class="logo">ByteMart<span>+</span></h1>
-            <p class="tagline">Tech Made Simple</p>
-        </div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#phones">Phones</a>
-            <a href="#accessories">Accessories</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <section id="home" class="hero-zone">
-        <div class="hero-content">
-            <h2>Latest Tech Deals!</h2>
-            <p>Check out our Note Series specials and get yours via WhatsApp today.</p>
-            <a href="https://wa.me/256705041411" target="_blank" class="hero-whatsapp-btn">
-                Inquire via WhatsApp
-            </a>
-        
-        </div>
-    </section>
-
-    <section id="phones" class="catalog-section">
-        <h3>Featured Phones</h3>
-        <div class="catalog-grid">
-            
-            <div class="product-card">
-                <div class="card-image">
-                    <img src="assets/images/Samsung S23 Ultra.jpeg" alt="Samsung Galaxy S23 Ultra">
-                </div>
-                <div class="card-details">
-                    <h3 class="product-name">Samsung S23 Ultra</h3>
-                    <p class="product-specs">12GB RAM | 512GB Storage</p>
-                    <p class="product-price">UGX 3,500,000</p>
-                </div>
-                <div class="card-actions">
-                    <a href="https://wa.me/256705041411?text=Hello%20ByteMart!%20I%20am%20interested%20in%20the%20Samsung%20S23%20Ultra." target="_blank" class="order-button">
-                        Order via WhatsApp
-                    </a>
-                </div>
+        <div class="container header-content">
+            <div class="logo">
+                ByteMart<span class="logo-plus">+</span>
+                <p class="tagline">Tech Made Simple</p>
             </div>
-
-               <div class="product-card">
-                <div class="card-image">
-                    <img src="assets/images/Tecno Spark 40.jpg" alt="Tecno Spark 40">
-                </div>
-                <div class="card-details">
-                    <h3 class="product-name">Tecno Spark 40</h3>
-                    <p class="product-specs">6GB RAM | 128GB Storage</p>
-                    <p class="product-price">UGX 462,000</p>
-                </div>
-                <div class="card-actions">
-                    <a href="https://wa.me/256705041411?text=Hello%20ByteMart!%20I%20am%20interested%20in%20the%20Samsung%20S23%20Ultra." target="_blank" class="order-button">
-                        Order via WhatsApp
-                    </a>
-                </div>
-            </div>
-
-               <div class="product-card">
-                <div class="card-image">
-                    <img src="assets/images/iPhone 16 Pro.jpg" alt="iPhone 16 Pro">
-                </div>
-                <div class="card-details">
-                    <h3 class="product-name">iPhone 16 Pro</h3>
-                    <p class="product-specs">12GB RAM | 512GB Storage</p>
-                    <p class="product-price">UGX 3,690,000</p>
-                </div>
-                <div class="card-actions">
-                    <a href="https://wa.me/256705041411?text=Hello%20ByteMart!%20I%20am%20interested%20in%20the%20Samsung%20S23%20Ultra." target="_blank" class="order-button">
-                        Order via WhatsApp
-                    </a>
-                </div>
-            </div>
-
-               <div class="product-card">
-                <div class="card-image">
-                    <img src="assets/images/Redmi Note 12.jpeg" alt="Redmi Note 12">
-                </div>
-                <div class="card-details">
-                    <h3 class="product-name">Redmi Note 12</h3>
-                    <p class="product-specs">8GB RAM | 128GB Storage</p>
-                    <p class="product-price">UGX 750,000</p>
-                </div>
-                <div class="card-actions">
-                    <a href="https://wa.me/256705041411?text=Hello%20ByteMart!%20I%20am%20interested%20in%20the%20Samsung%20S23%20Ultra." target="_blank" class="order-button">
-                        Order via WhatsApp
-                    </a>
-                </div>
-            </div>
-
-               <div class="product-card">
-                <div class="card-image">
-                    <img src="assets/images/Infinix Hot 60i.jpg" alt="Infinix Hot 60i">
-                </div>
-                <div class="card-details">
-                    <h3 class="product-name">Infinix Hot 60i</h3>
-                    <p class="product-specs">8GB RAM | 256GB Storage</p>
-                    <p class="product-price">UGX 500,000</p>
-                </div>
-                <div class="card-actions">
-                    <a href="https://wa.me/256705041411?text=Hello%20ByteMart!%20I%20am%20interested%20in%20the%20Samsung%20S23%20Ultra." target="_blank" class="order-button">
-                        Order via WhatsApp
-                    </a>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="card-image">
-                    <img src="assets/images/iPhone 15 Pro.jpg" alt="iPhone 15 Pro">
-                </div>
-                <div class="card-details">
-                    <h3 class="product-name">iPhone 15 Pro</h3>
-                    <p class="product-specs">256GB Storage | Titanium</p>
-                    <p class="product-price">UGX 4,200,000</p>
-                </div>
-                <div class="card-actions">
-                    <a href="https://wa.me/256705041411?text=Hello%20ByteMart!%20I%20am%20interested%20in%20the%20iPhone%2015%20Pro." target="_blank" class="order-button">
-                        Order via WhatsApp
-                    </a>
-                </div>
-            </div>
-            
-               <div class="product-card">
-                <div class="card-image">
-                    <img src="assets/images/Note 20 Ultra.jpg" alt="Samsung Note 20 Ultra">
-                </div>
-                <div class="card-details">
-                    <h3 class="product-name">Samsung Note 20 Ultra</h3>
-                    <p class="product-specs">8GB RAM | 256GB Storage</p>
-                    <p class="product-price">UGX 800,000</p>
-                </div>
-                <div class="card-actions">
-                    <a href="https://wa.me/256705041411?text=Hello%20ByteMart!%20I%20am%20interested%20in%20the%20Samsung%20S23%20Ultra." target="_blank" class="order-button">
-                        Order via WhatsApp
-                    </a>
-                </div>
-            </div>
-
-               <div class="product-card">
-                <div class="card-image">
-                    <img src="assets/images/Note 10 Plus.jpg" alt="Samsung Note 10 Plus">
-                </div>
-                <div class="card-details">
-                    <h3 class="product-name">Samsung Note 10 Plus</h3>
-                    <p class="product-specs">6GB RAM | 128GB Storage</p>
-                    <p class="product-price">UGX 550,000</p>
-                </div>
-                <div class="card-actions">
-                    <a href="https://wa.me/256705041411?text=Hello%20ByteMart!%20I%20am%20interested%20in%20the%20Samsung%20S23%20Ultra." target="_blank" class="order-button">
-                        Order via WhatsApp
-                    </a>
-                </div>
-            </div>
-
-             <div class="product-card">
-                <div class="card-image">
-                    <img src="assets/images/iPhone 11.jpg" alt="iPhone 11">
-                </div>
-                <div class="card-details">
-                    <h3 class="product-name">iPhone 11</h3>
-                    <p class="product-specs">4GB RAM | 128GB Storage</p>
-                    <p class="product-price">UGX 750,000</p>
-                </div>
-                <div class="card-actions">
-                    <a href="https://wa.me/256705041411?text=Hello%20ByteMart!%20I%20am%20interested%20in%20the%20Samsung%20S23%20Ultra." target="_blank" class="order-button">
-                        Order via WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            
-            </div>
-            
-        </div> </section> <section id="accessories" class="catalog-section">
-        <h3>Accessories & Gadgets</h3>
-        <div class="catalog-grid">
-            
-            <div class="product-card">
-                <div class="card-image">
-                    <img src="assets/images/Wireless Charger Pad.jpeg" alt="Wireless Charging Pad">
-                </div>
-                <div class="card-details">
-                    <h3 class="product-name">Wireless Charging Pad</h3>
-                    <p class="product-specs">Fast Charging 15W</p>
-                    <p class="product-price">UGX 120,000</p>
-                </div>
-                <div class="card-actions">
-                    <a href="https://wa.me/256705041411?text=Hello%20ByteMart!%20I%20am%20interested%20in%20the%20Wireless%20Charging%20Pad." target="_blank" class="order-button">
-                        Order via WhatsApp
-                    </a>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="card-image">
-                    <img src="assets/images/Infinix AirPods.jpeg" alt="Infinix Air Pods">
-                </div>
-                <div class="card-details">
-                    <h3 class="product-name">Infinix Air Pods</h3>
-                    <p class="product-specs">Long Battery Life</p>
-                    <p class="product-price">UGX 90,000</p>
-                </div>
-                <div class="card-actions">
-                    <a href="https://wa.me/256705041411?text=Hello%20ByteMart!%20I%20am%20interested%20in%20the%20Infinix%20Air%20Pods." target="_blank" class="order-button">
-                        Order via WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="card-image">
-                    <img src="assets/images/AirPods Pro.jpg" alt="Apple Airpods Pro">
-                </div>
-                <div class="card-details">
-                    <h3 class="product-name">Apple AirPods Pro</h3>
-                    <p class="product-specs">Adaptive Noise Cancellation</p>
-                    <p class="product-price">UGX 100,000</p>
-                </div>
-                <div class="card-actions">
-                    <a href="https://wa.me/256705041411?text=Hello%20ByteMart!%20I%20am%20interested%20in%20the%20Infinix%20Air%20Pods." target="_blank" class="order-button">
-                        Order via WhatsApp
-                    </a>
-                </div>
-            </div>
-
-             <div class="product-card">
-                <div class="card-image">
-                    <img src="assets/images/Anker PowerBank.jpg" alt="Anker Power Bank">
-                </div>
-                <div class="card-details">
-                    <h3 class="product-name">Anker Power Bank</h3>
-                    <p class="product-specs"> 165W | Charges Laptop & Phone</p>
-                    <p class="product-price">UGX 666,000</p>
-                </div>
-                <div class="card-actions">
-                    <a href="https://wa.me/256705041411?text=Hello%20ByteMart!%20I%20am%20interested%20in%20the%20Infinix%20Air%20Pods." target="_blank" class="order-button">
-                        Order via WhatsApp
-                    </a>
-                </div>
-            </div>
-
-             <div class="product-card">
-                <div class="card-image">
-                    <img src="assets/images/Apple Watch Series 6.jpg" alt="Apple Watch Series 6">
-                </div>
-                <div class="card-details">
-                    <h3 class="product-name">Apple Watch Series 6</h3>
-                    <p class="product-specs">Exclusive wrist wear</p>
-                    <p class="product-price">UGX 600,000</p>
-                </div>
-                <div class="card-actions">
-                    <a href="https://wa.me/256705041411?text=Hello%20ByteMart!%20I%20am%20interested%20in%20the%20Infinix%20Air%20Pods." target="_blank" class="order-button">
-                        Order via WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="card-image">
-                    <img src="assets/images/Watch Pro 2.jpg" alt="CMF Watch Pro 2">
-                </div>
-                <div class="card-details">
-                    <h3 class="product-name">Nothing Watch Pro 2</h3>
-                    <p class="product-specs">Timeless Wrist Watch</p>
-                    <p class="product-price">UGX 250,000</p>
-                </div>
-                <div class="card-actions">
-                    <a href="https://wa.me/256705041411?text=Hello%20ByteMart!%20I%20am%20interested%20in%20the%20Infinix%20Air%20Pods." target="_blank" class="order-button">
-                        Order via WhatsApp
-                    </a>
-                </div>
-            </div>
-            
-            </div> </section> <footer class="site-footer">
-        <div class="footer-container">
-            
-            <div class="footer-col brand-info">
-                <h3>ByteMart+</h3>
-                <p>Tech Made Simple. Your trusted source for the latest phones and accessories in Uganda.</p>
-                <div class="contact-detail">
-                    <p>📧 Email: <a href="mailto:support@bytemart.ug">bytemartug@gmail.com</a></p>
-                </div>
-                <div class="contact-detail">
-                    <p>📞 Call Us: <a href="https://wa.me/256705041411" target="_blank">+256705041411</a></p>
-                </div>
-                <div class="contact-detail">
-                    <p>📞 WhatsApp Us: <a href="https://wa.me/256779315934" target="_blank">+256779315934</a></p>
-                </div>
-            </div>
-
-            <div class="footer-col">
-                <h4>Quick Links</h4>
+            <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#phones">All Products</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#">Help & Support</a></li>
+                    <li><a href="#phones">Phones</a></li>
+                    <li><a href="#accessories">Accessories</a></li>
+                    <li><a href="news.html">Blog & News</a></li> <li><a href="#contact">Contact</a></li>
                 </ul>
+            </nav>
+            <div class="header-right">
+                <div class="search-bar rounded-search">
+                    <input type="text" id="search-input" placeholder="Search anything Phones, Accessories....">
+                    <button class="search-btn"></button>
+                </div>
+                <button id="theme-toggle" class="theme-toggle futuristic-toggle" aria-label="Toggle dark and light mode">
+                    <i class="fas fa-sun sun-icon"></i>
+                    <i class="fas fa-moon moon-icon"></i>
+                </button>
             </div>
+        </div>
+        <div id="search-results" class="container" style="display: none; padding-top: 20px; padding-bottom: 20px;">
+            <h2 style="text-align: left; margin-bottom: 15px; font-size: 1.8rem;" id="search-results-title">Search Results</h2>
+            <div class="product-grid" id="search-results-grid">
+                </div>
+        </div>
+    </header>
 
+    <main>
+        <section class="hero-section" id="home">
+            <div class="hero-content container">
+                <h1>Catch Deals Today!</h1>
+                <p>We have the best gadget prices on the market. Check our catalog and reach out to us</p>
+                <a href="https://wa.me/256705041411" target="_blank" class="btn primary-btn whatsapp-btn">Contact us on Whatsapp</a>
+            </div>
+        </section>
+
+        <div class="container product-container">
             
+            <section class="product-section section-title" id="black-november"> <h2>Black November Deals</h2>
+                <div class="product-grid" id="black-november-grid">
+                    
+                    <div class="product-card" data-product-name="iPhone 15 Pro">
+                        <div class="image-placeholder">
+                            <img src="Assets/images/iPhone 15 Pro.jpg" alt="iPhone 15 Pro, White">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">iPhone 15 Pro</h3>
+                            <p class="product-desc">128GB, White. Excellent condition.</p>
+                            <p class="product-price">UGX 2,600,000</p>
+                            <a href="https://wa.me/256705041411?text=I'm interested in the iPhone 15 Pro" target="_blank" class="btn order-btn">ORDER NOW</a>
+                        </div>
+                    </div>
 
-            <div class="footer-col">
-                <h4>Legal & Policies</h4>
-                <ul>
-                    <li><a href="terms.html">Terms & Conditions</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Return Policy</a></li>
-                    <li><a href="#">Shipping Info</a></li>
-                    <li><a href="#">Payment Methods</a></li>
-                </ul>
+                    <div class="product-card" data-product-name="Samsung Galaxy S23 Ultra">
+                        <div class="image-placeholder">
+                            <img src="Assets/images/Samsung S23 Ultra.jpeg" alt="Samsung Galaxy S23 Ultra, Black">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Galaxy S23 Ultra</h3>
+                            <p class="product-desc">256GB, Phantom Black. Brand New.</p>
+                            <p class="product-price">UGX 4,200,000</p>
+                            <a href="https://wa.me/256705041411?text=I'm interested in the Samsung Galaxy S23 Ultra" target="_blank" class="btn order-btn">ORDER NOW</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" data-product-name="AirPods Pro 2nd Gen">
+                        <div class="image-placeholder">
+                            <img src="Assets/images/AirPods Pro.jpg" alt="AirPods Pro 2nd Generation">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">AirPods Pro 2</h3>
+                            <p class="product-desc">Advanced noise cancellation and audio.</p>
+                            <p class="product-price">UGX 850,000</p>
+                            <a href="https://wa.me/256705041411?text=I'm interested in the AirPods Pro 2" target="_blank" class="btn order-btn">ORDER NOW</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" data-product-name="Samsung Watch 6 Classic">
+                        <div class="image-placeholder">
+                            <img src="Assets/images/Samsung Watch 6 Classic.jpg" alt="Samsung Galaxy Watch 6 Classic">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Galaxy Watch 6 Classic</h3>
+                            <p class="product-desc">47mm, Bluetooth. Smartwatch.</p>
+                            <p class="product-price">UGX 900,000</p>
+                            <a href="https://wa.me/256705041411?text=I'm interested in the Galaxy Watch 6 Classic" target="_blank" class="btn order-btn">ORDER NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="product-section section-title" id="phones"> 
+                <h2>Phones</h2>
+                <div class="product-grid" id="phones-grid">
+                    
+                    <div class="product-card" data-product-name="Google Pixel 7a">
+                        <div class="image-placeholder">
+                            <img src="Assets/images/Google Pixel 7a.jpg" alt="Google Pixel 7a">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Google Pixel 7a</h3>
+                            <p class="product-desc">128GB, Charcoal. New in box.</p>
+                            <p class="product-price">UGX 1,800,000</p>
+                            <a href="https://wa.me/256705041411?text=I'm interested in the Google Pixel 7a" target="_blank" class="btn order-btn">ORDER NOW</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product-name="Samsung Note 10 Plus">
+                        <div class="image-placeholder">
+                            <img src="Assets/images/Note 10 Plus.jpg" alt="Samsung Note 10 Plus">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Samsung Note 10 Plus</h3>
+                            <p class="product-desc">Refurbished in mint condition</p>
+                            <p class="product-price">UGX 600,000</p>
+                            <a href="https://wa.me/256705041411?text=I'm interested in the Samsung Note 10 Plus" target="_blank" class="btn order-btn">ORDER NOW</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product-name="Samsung Note 20 Ultra">
+                        <div class="image-placeholder">
+                            <img src="Assets/images/Note 20 Ultra.jpg" alt="Samsung Note 20 Ultra">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Samsung Note 20 Ultra</h3>
+                            <p class="product-desc">Top of the line flagship camera sytem</p>
+                            <p class="product-price">UGX 750,000</p>
+                            <a href="https://wa.me/256705041411?text=I'm interested in the Samsung Note 20 Ultra" target="_blank" class="btn order-btn">ORDER NOW</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" data-product-name="Xiaomi 13T Pro">
+                        <div class="image-placeholder">
+                            <img src="Assets/images/Xiaomi 13T Pro.jpg" alt="Xiaomi 13T Pro">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Xiaomi 13T Pro</h3>
+                            <p class="product-desc">12GB RAM, 512GB Storage. Flagship camera.</p>
+                            <p class="product-price">UGX 2,500,000</p>
+                            <a href="https://wa.me/256705041411?text=I'm interested in the Xiaomi 13T Pro" target="_blank" class="btn order-btn">ORDER NOW</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product-name="Samsung S23 Ultra">
+                        <div class="image-placeholder">
+                            <img src="Assets/images/Samsung S23 Ultra.jpeg" alt="Samsung S23 Ultra">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Samsung S23 Ultra</h3>
+                            <p class="product-desc">Iconic camera system | Brand New Phone</p>
+                            <p class="product-price">UGX 2,600,000</p>
+                            <a href="https://wa.me/256705041411?text=I'm interested in the Samsung S23 Ultra" target="_blank" class="btn order-btn">ORDER NOW</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product-name="Redmi Note 12">
+                        <div class="image-placeholder">
+                            <img src="Assets/images/Redmi Note 12.jpeg" alt="Redmi Note 12">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Redmi Note 12</h3>
+                            <p class="product-desc">Brand New Phone | Flagship Model</p>
+                            <p class="product-price">UGX 800,000</p>
+                            <a href="https://wa.me/256705041411?text=I'm interested in the Redmi Note 12" target="_blank" class="btn order-btn">ORDER NOW</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product-name="iPhone 15 Pro">
+                        <div class="image-placeholder">
+                            <img src="Assets/images/iPhone 15 Pro.jpg" alt="Apple iPhone 15 Pro">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Apple iPhone 15 Pro</h3>
+                            <p class="product-desc">Brand New | Apple Store Exclusive Mint Condition</p>
+                            <p class="product-price">UGX 2,600,000</p>
+                            <a href="https://wa.me/256705041411?text=I'm interested in the Apple iPhone 15 Pro" target="_blank" class="btn order-btn">ORDER NOW</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product-name="iPhone 16">
+                        <div class="image-placeholder">
+                            <img src="Assets/images/iPhone 16 Pro.jpg" alt="Apple iPhone 16">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Apple iPhone 16</h3>
+                            <p class="product-desc">Iconic camera system | Brand New Phone</p>
+                            <p class="product-price">UGX 2,600,000</p>
+                            <a href="https://wa.me/256705041411?text=I'm interested in the Apple iPhone 16" target="_blank" class="btn order-btn">ORDER NOW</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product-name="Infinix Hot 60i">
+                        <div class="image-placeholder">
+                            <img src="Assets/images/Infinix Hot 60i.jpg" alt="Infinix Hot 60i">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Infinix Hot 60i</h3>
+                            <p class="product-desc">Flaghip device, complete with AI integration and crisp camera</p>
+                            <p class="product-price">UGX 2,600,000</p>
+                            <a href="https://wa.me/256705041411?text=I'm interested in the Infinix Hot 60i" target="_blank" class="btn order-btn">ORDER NOW</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product-name="Tecno Spark 40">
+                        <div class="image-placeholder">
+                            <img src="Assets/images/Tecno Spark 40.jpg" alt="Tecno Spark 40">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Tecno Spark 40</h3>
+                            <p class="product-desc">2025 Tecno Flaghip Brand New</p>
+                            <p class="product-price">UGX 368,000</p>
+                            <a href="https://wa.me/256705041411?text=I'm interested in the Tecno Spark 40" target="_blank" class="btn order-btn">ORDER NOW</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" data-product-name="Oppo Find N3 Flip">
+                        <div class="image-placeholder">
+                            <img src="Assets/images/Oppo Find N3 Flip.jpg" alt="Oppo Find N3 Flip">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Oppo Find N3 Flip</h3>
+                            <p class="product-desc">Stylish folding phone. Cream color.</p>
+                            <p class="product-price">UGX 3,200,000</p>
+                            <a href="https://wa.me/256705041411?text=I'm interested in the Oppo Find N3 Flip" target="_blank" class="btn order-btn">ORDER NOW</a>
+                        </div>
+                    </div>
+
+
+                <div class="product-card" data-product-name="Oppo Find N3 Flip">
+                        <div class="image-placeholder">
+                            <img src="Assets/images/iPhone 11.jpg" alt="Apple iPhone 11">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Apple iPhone 11</h3>
+                            <p class="product-desc">Refurbished and in great quality</p>
+                            <p class="product-price">UGX 660,000</p>
+                            <a href="https://wa.me/256705041411?text=I'm interested in Apple iPhone 11" target="_blank" class="btn order-btn">ORDER NOW</a>
+                        </div>
+                    </div>
+                
+            </section>
+
+            <section class="product-section section-title" id="accessories"> <h2>Accessories</h2>
+                <div class="product-grid" id="accessories-grid">
+                    
+                    <div class="product-card" data-product-name="Anker PowerCore 20000mAh">
+                        <div class="image-placeholder">
+                            <img src="Assets/images/Anker Power Bank 20K.jpg" alt="Anker PowerCore Power Bank">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">PowerCore 20K</h3>
+                            <p class="product-desc">Anker 20000mAh Power Bank. Fast charging.</p>
+                            <p class="product-price">UGX 150,000</p>
+                            <a href="https://wa.me/256705041411?text=I'm interested in the Anker PowerCore 20000mAh" target="_blank" class="btn order-btn">ORDER NOW</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product-name="AirPods Pro 2nd Gen">
+                        <div class="image-placeholder">
+                            <img src="Assets/images/AirPods Pro.jpg" alt="AirPods Pro 2nd Generation">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">AirPods Pro 2</h3>
+                            <p class="product-desc">Advanced noise cancellation and audio.</p>
+                            <p class="product-price">UGX 850,000</p>
+                            <a href="https://wa.me/256705041411?text=I'm interested in the AirPods Pro 2" target="_blank" class="btn order-btn">ORDER NOW</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" data-product-name="Samsung Watch 6 Classic">
+                        <div class="image-placeholder">
+                            <img src="Assets/images/Samsung Watch 6 Classic.jpg" alt="Samsung Galaxy Watch 6 Classic">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Galaxy Watch 6 Classic</h3>
+                            <p class="product-desc">47mm, Bluetooth. Smartwatch. Elegant design</p>
+                            <p class="product-price">UGX 900,000</p>
+                            <a href="https://wa.me/256705041411?text=I'm interested in the Galaxy Watch 6 Classic" target="_blank" class="btn order-btn">ORDER NOW</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" data-product-name="Nothing CMF Watch Pro 2">
+                        <div class="image-placeholder">
+                            <img src="Assets/images/Watch Pro 2.jpg" alt="Nothing CMF Watch Pro 2">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">CMF Watch Pro 2</h3>
+                            <p class="product-desc">47mm, Compact Design. Smartwatch.</p>
+                            <p class="product-price">UGX 250,000</p>
+                            <a href="https://wa.me/256705041411?text=I'm interested in the Nothing CMF Watch Pro 2" target="_blank" class="btn order-btn">ORDER NOW</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product-name="Anker 165W Power Bank">
+                        <div class="image-placeholder">
+                            <img src="Assets/images/Anker PowerBank.jpg" alt="Anker Power 165W Bank">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Anker Power 165W Bank</h3>
+                            <p class="product-desc">165W | Power. Charges upto 4 devices</p>
+                            <p class="product-price">UGX 900,000</p>
+                            <a href="https://wa.me/256705041411?text=I'm interested in the Anker Power 165W Bank" target="_blank" class="btn order-btn">ORDER NOW</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product-name="Sony WH-1000XM5 Headphones">
+                        <div class="image-placeholder">
+                            <img src="Assets/images/Sony XM5 HeadPhones.jpg" alt="Sony WH-1000XM5 Noise Cancelling Headphones">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Sony XM5 Headphones</h3>
+                            <p class="product-desc">Industry-leading noise cancellation.</p>
+                            <p class="product-price">UGX 1,500,000</p>
+                            <a href="https://wa.me/256705041411?text=I'm interested in the Sony WH-1000XM5 Headphones" target="_blank" class="btn order-btn">ORDER NOW</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" data-product-name="Magnetic Wireless Charger">
+                        <div class="image-placeholder">
+                            <img src="Assets/images/MagSafe Charger.jpg" alt="Magnetic Wireless Charger Pad">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">MagSafe Charger</h3>
+                            <p class="product-desc">15W Magnetic wireless charging pad.</p>
+                            <p class="product-price">UGX 75,000</p>
+                            <a href="https://wa.me/256705041411?text=I'm interested in the Magnetic Wireless Charger" target="_blank" class="btn order-btn">ORDER NOW</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" data-product-name="Tempered Glass Screen Protector">
+                        <div class="image-placeholder">
+                            <img src="Assets/images/Tempered Glass.jpg" alt="Tempered Glass Screen Protector">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Tempered Glass</h3>
+                            <p class="product-desc">Full-coverage screen protection for iPhone.</p>
+                            <p class="product-price">UGX 35,000</p>
+                            <a href="https://wa.me/256705041411?text=I'm interested in the Tempered Glass Screen Protector" target="_blank" class="btn order-btn">ORDER NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="contact-section" id="contact">
+            <div class="contact-grid-full"> 
+                <div class="contact-info-block container"> <div class="contact-info-content"> <h2 style="color: white;">Get in Touch</h2>
+                        <p style="color: white;">Ready to Purchase an item or you want to inquire reach out to us.</p>
+                        <a href="https://wa.me/256705041411" target="_blank" class="btn secondary-btn chat-btn" style="background-color: #fb7420; color: white;">CHAT WITH US</a>
+                    </div>
+                </div>
+                <div class="contact-image-placeholder">
+                    <img src="Assets/images/customer service.jpg" alt="Customer support representative with a headset" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
             </div>
+        </div>
 
-
+<div class="main-footer">
+    <div class="container footer-grid">
+        
+        <div class="footer-col brand-info">
+            
+            <div class="logo footer-logo">
+                ByteMart<span class="logo-plus">+</span>
+            </div>
+            <p class="tagline-footer">Tech Made Simple. Your trusted source for the latest phones and accessories in Uganda.</p>
+            
+            <h3 class="footer-col-title contact-heading">Get in Touch</h3>
+            
+            <div class="contact-inline-group">
+                <span>Email: <a href="mailto:bytemartug@gmail.com" class="footer-link">bytemartug@gmail.com</a></span>
+                <span class="separator"> | </span>
+                <span>Call Us: <a href="tel:+256705041411" class="footer-link">+256705041411</a></span>
+                <span class="separator"> | </span>
+                <span>WhatsApp Us: <a href="https://wa.me/256779315934" target="_blank" class="footer-link">+256779315934</a></span>
+            </div>
         </div>
         
-        <div class="footer-bottom">
-            <div class="social-links">
-                <a href="#" target="_blank">X</a>
-                <a href="#" target="_blank">Instagram</a>
-                <a href="#" target="_blank">TikTok</a>
-            </div>
-            <div class="copyright">
-                &copy; 2025 ByteMart+. All rights reserved.
-            </div>
+        <div class="footer-col">
+            <h3 class="footer-col-title">Quick Links</h3>
+            <ul>
+                <li><a href="#hero-section" class="footer-link">Home</a></li>
+                <li><a href="#products" class="footer-link">All Products</a></li>
+                <li><a href="#about" class="footer-link">About Us</a></li>
+                <li><a href="faq.html" class="footer-link">FAQ</a></li>
+                <li><a href="news.html" class="footer-link">Blog & News</a></li> <li><a href="#contact" class="footer-link">Contact</a></li>
+            </ul>
         </div>
-    </footer>
-    </body>
+        
+        <div class="footer-col">
+            <h3 class="footer-col-title">Legal & Policies</h3>
+            <ul>
+                <li><a href="terms.html" class="footer-link">Terms & Conditions</a></li>
+                <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+                <li><a href="shipping.html" class="footer-link">Shipping & Delivery</a></li>
+                <li><a href="returns.html" class="footer-link">Returns & Exchange</a></li>
+                <li><a href="payment.html" class="footer-link">Payment Methods</a></li>
+                <li><a href="faq.html" class="footer-link">FAQ</a></li>
+            </ul>
+        </div>
+        
+    </div> <div class="footer-bottom">
+        <div class="social-links-container">
+            <a href="https://www.tiktok.com/@bytemartug?_r=1&_t=ZM-91AaSx4SEKe" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/ByteMartUG?t=SZDLdSw6kAMF5B9GpE1fRg&s=09" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/bytemartug?igsh=czJmNjI4ancyZTA4" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://whatsapp.com/channel/0029Vb71CnjA2pLGjsQqC81J" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>&copy; <span id="current-year">2024</span> ByteMart+. All rights reserved.</p>
+    </div>
+</div> 
+    <script src="Assets/JS/main.js"></script>
+</body>
 </html>

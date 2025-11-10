@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ByteMart+ | Terms and Conditions</title>
+    <title>ByteMart+ | Privacy Policy</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Assets/CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -21,14 +21,13 @@
 
     <style>
         /*
-         * HEADER STYLING (Full-width banner from image_e14e92.png)
+         * HEADER STYLING 
          */
         .policy-header {
             background: #3e5870; /* Dark blue-teal color */
             color: white;
             padding: 60px 0;
-            /* Confirmed: text-align center ensures the main heading is centered */
-            text-align: center; 
+            text-align: center;
         }
 
         .policy-header h1 {
@@ -42,16 +41,17 @@
             opacity: 0.9;
         }
         
-        /* * CORE T&C CONTENT STYLES (Matching the FAQ.html structure) 
+        /* * CORE CONTENT STYLES (privacy-content is equivalent to faq-content/terms-content)
          */
         
-        .terms-content {
-            padding: 40px 20px 60px 20px; 
+        .privacy-content {
+            /* Consistent spacing adjustment to push content up */
+            padding: 20px 20px 60px 20px; 
             max-width: 900px;
             margin: 0 auto;
         }
 
-        .terms-container {
+        .privacy-container {
             padding: 40px; 
             border-radius: 12px; 
             /* LIGHT MODE: Default white background */
@@ -59,8 +59,8 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
         }
 
-        /* FIX: Dark Mode Container: Ensure it uses the specified dark blue color #3e5870 */
-        html[data-theme="dark"] .terms-container, .dark-mode .terms-container {
+        /* Dark Mode Container: Ensure it uses the specified dark blue color #3e5870 */
+        html[data-theme="dark"] .privacy-container, .dark-mode .privacy-container {
             background-color: #3e5870; 
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); 
             color: white; /* Ensure all text inside is white by default */
@@ -78,17 +78,16 @@
         html[data-theme="dark"] .intro-text, .dark-mode .intro-text {
              color: #e0e0e0; 
         }
-
-        /* Section Title Styling (Modified to center the text and icon) */
+        
+        /* Section Title Styling (Consistent Orange/Centered Style) */
         .section-title {
             font-size: 1.8rem;
-            /* FORCE ORANGE */
-            color: #fb7420;
+            color: #fb7420; /* Orange accent */
             border-bottom: 2px solid var(--color-border, #ddd);
             padding-bottom: 10px;
-            margin-top: 50px; 
+            /* Consistent spacing adjustment */
+            margin-top: 30px; 
             margin-bottom: 30px;
-            /* NEW: Center the heading content (icon + text) */
             text-align: center; 
         }
         
@@ -97,9 +96,8 @@
             color: #fb7420;
         }
         
-        /* Dark Mode override for section title border and color */
+        /* Dark Mode override for section title border */
         html[data-theme="dark"] .section-title, .dark-mode .section-title {
-            color: #fb7420;
             border-bottom: 2px solid rgba(255, 255, 255, 0.3); 
         }
 
@@ -112,10 +110,10 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
 
-        /* FIX: Dark Mode override for accordion item (Matching image_eb3bff.png style - dark background, white text) */
+        /* Dark Mode override for accordion item */
         html[data-theme="dark"] .accordion-item, .dark-mode .accordion-item {
             border: 1px solid rgba(255, 255, 255, 0.1); 
-            background-color: rgba(0, 0, 0, 0.2); /* Dark overlay/shade for contrast against container */
+            background-color: rgba(0, 0, 0, 0.2); 
         }
 
         .accordion-item summary {
@@ -125,7 +123,7 @@
             padding: 18px 25px;
             font-weight: 600;
             font-size: 1.1rem;
-            color: var(--color-primary, #354451); /* Light mode text color */
+            color: var(--color-primary, #354451); 
             cursor: pointer;
             list-style: none; 
             position: relative;
@@ -136,7 +134,7 @@
             color: #ffffff; 
         }
 
-        /* Custom toggle icon - set to the fixed orange (Matching FAQ) */
+        /* Custom toggle icon */
         .accordion-item summary::after {
             content: "\f055"; /* Plus icon */
             font-family: "Font Awesome 6 Free";
@@ -158,7 +156,7 @@
             border-radius: 8px 8px 0 0;
         }
         
-        /* Dark Mode adjustments for open state (Matching FAQ) */
+        /* Dark Mode adjustments for open state */
         html[data-theme="dark"] .accordion-item[open] summary, .dark-mode .accordion-item[open] summary {
             background-color: rgba(255, 255, 255, 0.15); 
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -169,25 +167,12 @@
             padding-top: 0;
             font-size: 0.95rem;
             line-height: 1.6;
-            color: var(--color-text-faded, #555); /* Light mode answer text color */
+            color: var(--color-text-faded, #555); 
         }
         
         /* Dark Mode override for answer text */
         html[data-theme="dark"] .accordion-item-body, .dark-mode .accordion-item-body {
             color: #e0e0e0;
-        }
-        
-        /* Inner heading style for 2.1, 3.1, etc. */
-        .accordion-item-body h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-top: 15px;
-            margin-bottom: 5px;
-            color: var(--color-primary, #354451);
-        }
-        
-        html[data-theme="dark"] .accordion-item-body h3, .dark-mode .accordion-item-body h3 {
-            color: white;
         }
         
         .accordion-item-body ul {
@@ -196,17 +181,15 @@
             margin-bottom: 15px;
         }
         
-        /* Ensure links inside accordion bodies are visible */
         .accordion-item-body a {
             color: #fb7420;
         }
         
         /* ==================================== */
-        /* RESPONSIVENESS (Copied from FAQ) */
+        /* RESPONSIVENESS */
         /* ==================================== */
         @media (max-width: 768px) {
             
-            /* Header Fixes */
             .header-content {
                 flex-wrap: wrap; 
                 justify-content: center;
@@ -235,12 +218,11 @@
                 margin-right: 15px;
             }
             
-            /* Main T&C Content Fixes */
-            .terms-content {
+            .privacy-content {
                 padding: 30px 10px; 
             }
 
-            .terms-container {
+            .privacy-container {
                 padding: 20px; 
             }
             
@@ -256,7 +238,6 @@
                 font-size: 1.5rem;
             }
             
-            /* Adjust accordion font size */
             .accordion-item summary {
                 font-size: 1rem;
                 padding: 15px 20px;
@@ -304,107 +285,101 @@
     </header>
 
     <main>
-        <!-- Policy Header Section (Main heading is centered via .policy-header CSS) -->
         <section class="policy-header">
             <div class="container">
-                <h1>Terms and Conditions</h1>
-                <p>Governing the use of the ByteMart+ online store and services.</p>
+                <h1>Privacy Policy</h1>
+                <p>Understanding how ByteMart+ collects, uses, and protects your personal data.</p>
             </div>
         </section>
         
-        <section class="terms-content">
-            <div class="terms-container">
-                <!-- Introduction Paragraph -->
-                <p class="intro-text">Welcome to ByteMart+ ("we," "our," or "us"). These Terms and Conditions ("Terms") govern your use of the ByteMart+ website and its services, including the sale of mobile phones and accessories in Uganda. By accessing or using our services, you agree to be bound by these Terms.</p>
+        <section class="privacy-content">
+            <div class="privacy-container">
                 
+                <p class="intro-text">
+                    This Privacy Policy describes how ByteMart+ collects, uses, and shares your personal information when you visit or make a purchase from our site. We are committed to protecting your privacy and ensuring a secure shopping experience.
+                </p>
 
-                <h2 class="section-title"><i class="fas fa-gavel"></i> General Terms of Service</h2>
-                
-                <!-- Accordion Structure Starts Here -->
-                
-                <details class="accordion-item">
-                    <summary>1. Eligibility and Account</summary>
-                    <div class="accordion-item-body">
-                        <h3>1.1 Eligibility</h3>
-                        <p>You must be at least 18 years old to make a purchase or register an account on ByteMart+. By using the Service, you represent and warrant that you meet this requirement.</p>
-
-                        <h3>1.2 Account Responsibility</h3>
-                        <p>You are responsible for maintaining the confidentiality of your account password and for all activities that occur under your account. You agree to notify us immediately of any unauthorized use of your account.</p>
-                    </div>
-                </details>
-
-                <details class="accordion-item">
-                    <summary>2. Products and Orders (Online-Only Policy)</summary>
-                    <div class="accordion-item-body">
-                        <h3>2.1 Product Descriptions and Availability</h3>
-                        <p>We strive to be as accurate as possible with the product descriptions, pricing, and availability. However, we do not warrant that product descriptions or other content of this Service are entirely accurate, complete, reliable, current, or error-free. All products are sold **strictly online**, and we do not have a physical retail location for product viewing or pickup.</p>
-
-                        <h3>2.2 Pricing and Payment</h3>
-                        <p>All prices are listed in Ugandan Shillings (UGX) unless otherwise stated. We reserve the right to change prices at any time without prior notice. Payment is accepted via **Mobile Money (MTN, Airtel)**, **Bank Transfer**, or **BitCoin**. Our core policy is **Payment is required in full and must be confirmed before any order is packaged or dispatched for delivery**.</p> 
-
-                        <h3>2.3 Order Acceptance and Confirmation</h3>
-                        <p>The confirmation of an order signifies our receipt of your order details. Order acceptance, and thus the creation of a binding contract, occurs only upon **successful confirmation of full payment**. We may, at any time after receipt of your order and payment, decline or place limits on your order for any reason, in which case a full refund will be processed.</p>
-                    </div>
-                </details>
-
-                <h2 class="section-title"><i class="fas fa-shipping-fast"></i> Shipping, Delivery, and Returns</h2>
-
-                <details class="accordion-item">
-                    <summary>3. Shipping and Delivery (Kampala Focus)</summary>
-                    <div class="accordion-item-body">
-                        <h3>3.1 Delivery Times and Scope</h3>
-                        <p>Our operations are majorly concentrated in **Kampala**. Delivery times provided are estimates only. We will communicate expected delivery windows promptly.</p>
-
-                        <h3>3.2 Payment Before Shipment (Fraud Prevention Policy)</h3>
-                        <p>Unless you qualify for the **Cash on Delivery (COD)** exception, all orders must be fully paid and confirmed before we hand the item over to our logistics partner. This process is intended to be **fraud-proof**.</p>
-                        
-                        <h3>3.3 Quick Ship Guarantee (Same Day Shipping)</h3>
-                        <p>Orders paid before **1 PM** are typically shipped the **same business day for Kampala**. This is our **Quick Ship Guarantee**.</p> 
-
-                        <h3>3.4 Risk of Loss and Shipping Fees</h3>
-                        <p>The risk of loss and title for all items purchased passes to you upon our delivery to the carrier (or to you directly for COD). Shipping fees are non-refundable unless the return is due to an error on our part (e.g., wrong item shipped).</p>
-                    </div>
-                </details>
+                <h2 class="section-title"><i class="fas fa-shield-alt"></i> Information We Collect</h2>
                 
                 <details class="accordion-item">
-                    <summary>4. Returns and Refunds</summary>
+                    <summary>1. Personal Information Provided by You</summary>
                     <div class="accordion-item-body">
-                        <p>Our detailed **Returns Policy** is incorporated into these Terms by reference. Key points include:</p>
+                        <p>We collect personal information that you voluntarily provide to us when you register on the website, place an order, or contact us. This includes:</p>
                         <ul>
-                            <li><strong>Exchange Period:</strong> Products may be exchanged within a specified period (typically 3-7 days) if they have a manufacturing defect or do not match the order description.</li>
-                            <li><strong>Condition:</strong> Products must be returned unused and in their original packaging.</li>
-                            <li><strong>Non-Refundable:</strong> We do not offer returns or refunds for buyer's remorse or if the product has been used or opened.</li>
+                            <li>**Identification Data:** Your name, email address, phone number, and physical delivery address.</li>
+                            <li>**Transaction Data:** Details about the product you purchased and the payment method used (Note: We do not store full mobile money PINs or bank card numbers; secure processors handle payment details).</li>
+                            <li>**Communication Data:** Information you provide when contacting customer support via email or WhatsApp.</li>
+                        <p>This information is necessary to process your orders and communicate with you.</p>
+                    </div>
+                </details>
+
+                <details class="accordion-item">
+                    <summary>2. Automatic Data Collection (Usage and Technical Data)</summary>
+                    <div class="accordion-item-body">
+                        <p>When you visit our website, we automatically collect certain information about your device and interaction with our service, known as Usage Data. This may include:</p>
+                        <ul>
+                            <li>**Device Information:** IP address, browser type, operating system, and unique device identifiers.</li>
+                            <li>**Browsing Data:** Pages viewed, products searched, time spent on pages, and referring sites.</li>
+                        <p>This data is used to analyze website performance, track trends, and improve the shopping experience.</p>
+                    </div>
+                </details>
+                
+                <h2 class="section-title"><i class="fas fa-cogs"></i> How We Use Your Information</h2>
+
+                <details class="accordion-item">
+                    <summary>3. Purpose of Processing Your Data</summary>
+                    <div class="accordion-item-body">
+                        <p>We use the collected information for various legitimate business purposes, including:</p>
+                        <ul>
+                            <li>**Order Fulfillment:** To process and deliver your goods (Name, address, contact).</li>
+                            <li>**Communication:** To send you updates, tracking information, and respond to inquiries.</li>
+                            <li>**Marketing:** To send promotional emails and special offers, but only if you have opted-in (you can opt-out anytime).</li>
+                            <li>**Security and Fraud Prevention:** To verify transactions and prevent illegal activities, including compliance with our "Payment Before Shipment" policy.</li>
                         </ul>
                     </div>
                 </details>
                 
-                <h2 class="section-title"><i class="fas fa-lock"></i> Legal and Final Provisions</h2>
-                
                 <details class="accordion-item">
-                    <summary>5. Intellectual Property</summary>
+                    <summary>4. Sharing and Disclosure of Data</summary>
                     <div class="accordion-item-body">
-                        <p>All content on the ByteMart+ site, including text, graphics, logos, images, software, and our original **tech reviews**, is the property of ByteMart+ or its suppliers and is protected by international copyright laws. You may not use any content without our express written permission.</p>
-                    </div>
-                </details>
-                
-                <details class="accordion-item">
-                    <summary>6. Limitation of Liability</summary>
-                    <div class="accordion-item-body">
-                        <p>To the fullest extent permitted by applicable law, ByteMart+ shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, resulting from (a) your access to or use of or inability to access or use the Service; and (b) any unauthorized access to or use of our servers and/or any personal information stored therein.</p>
-                    </div>
-                </details>
-                
-                <details class="accordion-item">
-                    <summary>7. Governing Law and Jurisdiction</summary>
-                    <div class="accordion-item-body">
-                        <p>These Terms shall be governed and construed in accordance with the laws of **Uganda**, without regard to its conflict of law provisions. Any legal action or proceeding arising under these Terms will be brought exclusively in the courts located in Kampala, Uganda.</p>
+                        <p>We only share your information with third parties when necessary to run our business or comply with legal requirements:</p>
+                        <ul>
+                            <li>**Service Providers:** We share necessary delivery details with our logistics partners (e.g., Courier services) for order delivery.</li>
+                            <li>**Payment Processors:** Transaction data is shared with secure Mobile Money and bank payment gateways.</li>
+                            <li>**Legal Compliance:** We may disclose your information if required by law or in response to valid requests by public authorities (e.g., a court order).</li>
+                        <p>We do not sell or rent your personal information to third parties for their independent marketing purposes.</p>
                     </div>
                 </details>
 
+                <h2 class="section-title"><i class="fas fa-user-lock"></i> Data Security and Rights</h2>
+
                 <details class="accordion-item">
-                    <summary>8. Changes to Terms</summary>
+                    <summary>5. Data Security Measures</summary>
                     <div class="accordion-item-body">
-                        <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. We will try to provide at least 30 days' notice prior to any new terms taking effect. By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms.</p>
+                        <p>We implement robust technical and organizational measures designed to secure your personal information. This includes:</p>
+                        <ul>
+                            <li>**Encryption:** Using SSL technology to protect data transmission on our site.</li>
+                            <li>**Access Control:** Restricting employee access to your personal data to only those who require it for specific job functions.</li>
+                            <li>**Payment Security:** Outsourcing payment processing to certified, secure payment platforms.</li>
+                        </ul>
+                        <p>However, no electronic transmission or storage is 100% secure, and we cannot guarantee absolute security.</p>
+                    </div>
+                </details>
+                
+                <details class="accordion-item">
+                    <summary>6. Your Privacy Rights</summary>
+                    <div class="accordion-item-body">
+                        <p>You have the right to access the personal information we hold about you, to ask that your personal information be corrected, updated, or deleted. If you would like to exercise this right, please contact us:</p>
+                        <p>Email: <a href="mailto:bytemartug@gmail.com">bytemartug@gmail.com</a></p>
+                    </div>
+                </details>
+                
+                <h2 class="section-title"><i class="fas fa-cookie-bite"></i> Cookie Policy</h2>
+
+                <details class="accordion-item">
+                    <summary>7. Use of Cookies</summary>
+                    <div class="accordion-item-body">
+                        <p>We use "cookies" to help us remember and process the items in your shopping cart, understand and save your preferences for future visits, and compile aggregate data about site traffic and site interaction. You can choose to have your computer warn you each time a cookie is being sent, or you can choose to turn off all cookies through your browser settings.</p>
                     </div>
                 </details>
                 
@@ -441,7 +416,7 @@
                     <div class="contact-inline-group">
                         <span>Email: <a href="mailto:bytemartug@gmail.com" class="footer-link">bytemartug@gmail.com</a></span>
                         <span class="separator"> | </span>
-                        <span>Call Us: <a href="tel:+256705041411" class="footer-link">+256705041411</a></span>
+                        <span>Call Us: <a href="tel:+256705041411" class="footer-link">+2567041411</a></span>
                         <span class="separator"> | </span>
                         <span>WhatsApp Us: <a href="https://wa.me/256779315934" target="_blank" class="footer-link">+256779315934</a></span>
                     </div>

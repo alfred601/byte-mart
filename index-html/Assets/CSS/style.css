@@ -1,401 +1,909 @@
+/* ======================================
+    0. CSS Variable Definitions (Light & Dark)
+    ======================================
+*/
 
-/* Global variables for ByteMart+ branding */
+/* --- Light Mode Colors --- */
 :root {
-    --byte-blue: #0073e6; /* Deep ByteMart Blue */
-    --byte-orange: #ff8000; /* Updated Bright ByteMart Orange (for CTAs) */
-    --whatsapp-green: #25D366; /* New WhatsApp Green */
-    --text-dark: #333;
-    --text-light: #f4f4f4; /* Updated off-white background color */
-    --background-gray: #f9f9f9;
+    --color-primary-accent: #fb7420; /* Orange */
+    --color-secondary: #0473d5; /* Blue (links, primary buttons, contact background) */
+    --color-success: #00bf63; /* Green (ORDER NOW buttons) */
+    --color-footer-base: #354451; /* Dark Grey for text/secondary elements */
+    
+    /* General Light Mode Palette */
+    --color-text: #354451; 
+    --color-background: #ffffff;
+    --color-header-bg: var(--color-background); 
+    --color-header-text: var(--color-text); 
+    --color-card-bg: #f7f7f7; /* Very light grey for card backgrounds */
+    --color-card-shadow: rgba(0, 0, 0, 0.1);
+    --color-footer-text: #ffffff;
+    --color-link-hover: var(--color-primary-accent);
+
+    /* Specific Sections */
+    --color-contact-bg: var(--color-secondary);
+    --color-search-bg: #eeeeee;
 }
 
+/* --- Dark Mode Colors --- */
+.dark-mode {
+    --color-background: #022a4d; /* Dark Space Blue */
+    --color-text: #ffffff;
+    --color-header-bg: #022a4d;
+    --color-header-text: var(--color-text);
+    --color-card-bg: #3e5870; /* Container Box/Card Background */
+    --color-card-shadow: rgba(255, 255, 255, 0.1);
+    
+    /* Specific Sections */
+    --color-contact-bg: #054680; /* Variable Contact Area Blue */
+    --color-footer-base: #022a4d; /* Dark Space Blue for main footer area */
+    --color-search-bg: #054680;
+    --color-link-hover: var(--color-success);
+    
+    /* FIX 1: Ensure product price is orange in dark mode */
+    --color-product-price-dark: var(--color-primary-accent); 
+}
+
+/* ======================================
+    1. Base Styles & Typography
+    ======================================
+*/
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    color: var(--text-dark);
-    background-color: var(--text-light); /* Using the new off-white background */
+    background-color: var(--color-background);
+    color: var(--color-text);
     line-height: 1.6;
 }
 
-/* --- HEADER AND NAVIGATION --- */
-header {
-    background-color: var(--byte-blue); /* Updated to solid blue background */
-    padding: 20px 0;
-    text-align: center;
-    color: white;
-    border-bottom: none; /* Remove previous border */
+a {
+    text-decoration: none;
+    color: var(--color-text);
 }
 
-.logo-container {
-    margin-bottom: 15px;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
-.logo {
-    font-size: 2.5em;
+/* Headings pop style */
+h1 {
+    font-size: 2.8rem;
     font-weight: 700;
-    color: white; /* Logo text color */
 }
 
-.logo span {
-    color: var(--byte-orange); /* Orange accent for the '+' */
+h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+    /* Pop effect using brand color */
+    color: var(--color-secondary);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode specific heading pop */
+.dark-mode h2 {
+    color: var(--color-secondary); 
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+.section-title {
+    padding-top: 50px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* ======================================
+    2. Header & Navigation
+    ======================================
+*/
+header {
+    background-color: var(--color-header-bg);
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.dark-mode header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-content {
+    /* FIX: Ensure logo is centered, and nav/search follow a clear vertical flow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Logo Styling */
+.logo {
+    text-align: center; 
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-secondary); 
+}
+
+.dark-mode .logo {
+    color: var(--color-text); 
+}
+
+.logo-plus {
+    color: var(--color-primary-accent); 
 }
 
 .tagline {
-    font-size: 0.9em;
-    opacity: 0.8;
-    margin-top: -5px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--color-header-text);
 }
 
-nav {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding-top: 10px;
+/* Navigation Styling */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
 }
 
 nav a {
-    color: white; /* Nav links are white on blue background */
-    text-decoration: none;
     font-weight: 600;
-    padding: 5px 15px;
-    margin: 0 5px;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+    color: var(--color-header-text); 
+    /* FIX: Make the anchor inline-block so the border-bottom only covers the text width */
     display: inline-block;
-    transition: color 0.2s, background-color 0.2s;
-    border-radius: 5px;
 }
 
 nav a:hover {
-    color: var(--byte-orange);
-    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-link-hover);
+    border-bottom: 2px solid var(--color-link-hover);
 }
 
-/* --- HERO ZONE (Image as Background) --- */
-.hero-zone {
-    /* 1. The Gradient Overlay (Original Colors, 50% Opacity) */
-    background-image: 
-        linear-gradient(to right, 
-            rgba(0, 115, 230, 0.5), /* Byte Blue 50% opacity */
-            rgba(0, 170, 255, 0.5)  /* Lighter Blue 50% opacity */
-        ), 
-        
-        /* NOTE: Assuming CSS is in 'assets/css/', the relative path is: */
-        url("../images/Banner.png"); 
-    
+/* NEW: Dark Mode Navigation Hover - Must override the generic nav a:hover link hover color */
+.dark-mode nav a:hover {
+    color: var(--color-primary-accent); 
+    border-bottom: 2px solid var(--color-primary-accent);
+}
+
+/* Header Right (Search and Toggle) */
+.header-right {
+    /* FIX: Center search and toggle section */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto; 
+}
+
+/* Search Bar (Rounded & Visible) */
+.search-bar {
+    display: flex;
+    flex-grow: 1;
+    margin-right: 15px;
+    border-radius: 50px; 
+    overflow: hidden;
+    background-color: var(--color-search-bg);
+    border: 2px solid var(--color-secondary);
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--color-text);
+}
+
+.search-btn {
+    background-color: var(--color-primary-accent); 
+    border: none;
+    width: 40px;
+    cursor: pointer;
+    position: relative;
+}
+
+.search-btn::before {
+    content: '\f002';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--color-footer-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Theme Toggle (Futuristic) - Animation FIX */
+.theme-toggle {
+    background: var(--color-secondary);
+    color: var(--color-footer-text);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px var(--color-secondary);
+    padding: 0;
+}
+
+.theme-toggle:hover {
+    box-shadow: 0 0 15px var(--color-secondary), 0 0 5px var(--color-primary-accent);
+}
+
+.sun-icon, .moon-icon {
+    position: absolute;
+    /* FIX: Better transition for smooth appearance/disappearance */
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+}
+
+/* Light Mode: Show Sun, Hide Moon */
+.light-mode .sun-icon {
+    transform: translateY(0);
+    opacity: 1;
+}
+.light-mode .moon-icon {
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+/* Dark Mode: Show Moon, Hide Sun */
+.dark-mode .sun-icon {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+.dark-mode .moon-icon {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+/* ======================================
+    3. Hero Section 
+    ======================================
+*/
+.hero-section {
+    /* Combined Background properties for clarity: Gradient, Image URL, No Repeat, Center Position */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Assets/images/customer service.jpg');
+    /* * FIX: Ensure 16:9 image fills the hero zone without repeating */
     background-size: cover; 
-    background-position: center center; 
+    background-position: center;
+    /* MODIFIED: Removed 'background-attachment: fixed;' so the section scrolls normally */
     background-repeat: no-repeat;
     
     color: white;
     text-align: center;
-    padding: 80px 20px;
-    margin-bottom: 40px;
-    position: relative; 
+    /* MODIFIED: Increased vertical padding and min-height for better visual presence */
+    padding: 100px 0; 
+    margin-bottom: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    
+    width: 100%;
+    position: relative;
+    padding-top: 100px; 
+    min-height: 400px; 
+    
+    overflow: hidden; 
+    
+    /* Make hero-section a flex container to center the content vertically */
+    display: flex;
+    justify-content: center; /* Center horizontally (for content < 100% width) */
+    align-items: center; /* Center vertically */
 }
 
-.hero-zone h2 {
-    font-size: 3em; /* Restoring original size for impact */
-    margin-bottom: 10px;
+/* NEW: Keyframes for a subtle fade-in and slide-up animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.hero-zone p {
-    font-size: 1.2em; /* Restoring original size */
-    margin: 10px auto 20px;
-    max-width: 600px;
-}
-
-.hero-whatsapp-btn {
-    display: inline-block;
-    background-color: var(--byte-orange);
-    color: white;
-    text-decoration: none;
-    padding: 12px 30px;
-    border-radius: 8px;
-    font-weight: 700;
-    transition: background-color 0.2s, transform 0.2s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.hero-whatsapp-btn:hover {
-    background-color: #e66900;
-    transform: translateY(-2px);
-}
-
-/* --- CATALOG SECTION & GRID --- */
-.catalog-section {
-    max-width: 1200px;
-    margin: 0 auto 50px;
-    padding: 0 20px;
-}
-
-.catalog-section h3 {
-    text-align: center;
-    font-size: 2.5em; /* Restoring original size */
-    color: var(--byte-blue);
-    margin: 40px 0 25px;
-    font-weight: 700;
-}
-
-.catalog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px; 
-}
-
-/* --- PRODUCT CARD STYLES --- */
-.product-card {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+.hero-content {
+    /* REMOVED: conflicting absolute positioning and width/height */
+    
+    /* These properties center the text and CTA *inside* the container width */
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px; 
+    z-index: 10;
+    text-align: center; 
+    margin: 0 auto;
+    max-width: 600px;
+    
+    /* NEW: Apply the animation */
+    animation: fadeInUp 2s ease-out forwards; 
+}
+
+.hero-content h1 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.primary-btn {
+    background-color: var(--color-primary-accent); 
+    color: var(--color-footer-text); 
+    border: 2px solid var(--color-primary-accent);
+}
+
+.primary-btn:hover {
+    background-color: transparent;
+    color: var(--color-primary-accent);
+    box-shadow: 0 0 15px var(--color-primary-accent);
+}
+
+/* ======================================
+    4. Product Cards & Grid
+    ======================================
+*/
+.product-container {
+    padding-bottom: 50px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: var(--color-card-bg);
+    border-radius: 15px;
+    padding: 15px;
     text-align: center;
+    overflow: hidden;
+    box-shadow: 0 4px 10px var(--color-card-shadow);
+    /* Pop up effect on hover */
+    transform: translateY(0);
+    transition: all 0.3s ease-in-out;
 }
 
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 20px var(--color-card-shadow);
 }
 
-.card-image {
+.dark-mode .product-card:hover {
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+.image-placeholder {
     width: 100%;
+    padding-top: 100%; /* 1:1 Aspect Ratio */
+    position: relative;
+    margin-bottom: 15px;
+    border-radius: 10px;
     overflow: hidden;
-    aspect-ratio: 1 / 1;
-    background-color: var(--background-gray);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.card-image img {
+.image-placeholder img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    padding: 20px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
-.card-details {
-    padding: 15px;
-    flex-grow: 1; 
+.product-info {
+    padding: 10px 0;
 }
 
-.product-name {
-    font-size: 1.4em; /* Restoring size */
-    color: var(--byte-blue);
+.product-title {
+    font-weight: 700;
+    font-size: 1.2rem;
     margin-bottom: 5px;
-    font-weight: 600;
 }
 
-.product-specs {
-    font-size: 0.9em;
-    color: #777;
+.product-desc {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    opacity: 0.7;
     margin-bottom: 10px;
 }
 
 .product-price {
-    font-size: 1.8em; /* Restoring size */
-    font-weight: 800;
-    color: var(--text-dark);
-    margin-bottom: 20px;
-}
-
-.card-actions {
-    padding: 0 15px 15px;
-    margin-top: auto; 
-}
-
-.order-button {
-    display: block; 
-    width: 100%; /* Button fills the width of the card action area */
-    background-color: var(--byte-orange);
-    color: var(--text-light);
-    padding: 10px 20px;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 6px;
-    transition: background-color 0.2s;
-}
-
-.order-button:hover {
-    background-color: #e66900;
-}
-
-/* --- LEGAL CONTENT PAGE STYLES (UPDATED) --- */
-.legal-content {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    /* Ensure the text inside is left-aligned, overriding any body-level centering */
-    text-align: left; 
-}
-
-.legal-content h1 {
-    font-size: 2.5em;
-    color: var(--byte-blue);
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--byte-orange);
-    text-align: center; /* Center the main title for better aesthetics */
-}
-
-.legal-content h2 {
-    font-size: 1.8em;
-    color: var(--text-dark);
-    margin-top: 30px;
-    margin-bottom: 10px;
-}
-
-.legal-content p {
-    /* Explicitly setting text alignment for readability */
-    text-align: justify; 
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary-accent); /* Orange color in Light Mode */
     margin-bottom: 15px;
-    font-size: 1em;
-    line-height: 1.7;
-    color: #555;
 }
 
-.legal-content .effective-date {
-    font-style: italic;
-    color: #888;
-    margin-bottom: 30px;
-    text-align: center; /* Center the effective date */
+.dark-mode .product-price {
+    /* FIX 2: Use the new Dark Mode variable to set price to Orange */
+    color: var(--color-product-price-dark); 
 }
 
-
-/* --- FOOTER STYLES --- */
-.site-footer {
-    background-color: #222; 
-    color: #ccc;
-    font-size: 0.9em;
-    padding-top: 40px;
+.order-btn {
+    background-color: var(--color-success); 
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
 }
 
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px 30px;
+.order-btn:hover {
+    background-color: #00994f; 
+    transform: scale(1.02);
+}
+
+/* ======================================
+    5. Contact Section (REVISED)
+    ======================================
+*/
+.contact-section {
+    background-color: var(--color-contact-bg);
+    color: var(--color-footer-text);
+    padding: 0;
+    margin-top: 50px;
+    width: 100%; 
+    overflow-x: hidden; 
+}
+
+/* NEW: Remove padding from the container if the contact section uses one */
+.contact-section .container {
+    padding: 0; 
+}
+
+.contact-grid-full {
+    display: grid;
+    /* Two columns: Content (aligned left) and Image (spans to edge) */
+    grid-template-columns: 1fr 1fr;
+    height: 350px;
+    
+    /* NEW: Span the full viewport width */
+    max-width: none; 
+    width: 100vw; 
+    margin-left: calc(50% - 50vw); 
+}
+
+.contact-info-block {
+    background-color: var(--color-secondary);
+    
+    .dark-mode & {
+        background-color: var(--color-contact-bg);
+    }
     display: flex;
-    flex-wrap: wrap; 
-    /* FIX: Changed from space-between to flex-start to cluster columns */
-    justify-content: flex-start; 
+    align-items: center; 
+    justify-content: flex-start;
+    
+    /* NEW: Calculate left padding to align content to the 1200px container's left edge */
+    padding-left: calc(50vw - 600px + 15px); 
+    padding-right: 15px;
+}
+
+.contact-info-content {
+    max-width: 450px; 
+    padding: 0; 
+}
+
+.contact-info-block h2 {
+    /* NEW: Ensure text alignment is LEFT */
+    text-align: left; 
+    color: white;
+    text-shadow: none;
+    margin-bottom: 15px;
+    
+    /* NEW: Make "Get in Touch" bold and use the large font size */
+    font-weight: 700; 
+    font-size: 2.8rem; 
+}
+
+.contact-info-block p {
+    margin-bottom: 30px; 
+    font-size: 1.1rem; 
+}
+
+/* NEW: Style for the CTA Button (Chat with Us) - It uses .secondary-btn */
+.secondary-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    
+    /* Initial colors */
+    background-color: var(--color-primary-accent); 
+    color: var(--color-footer-text); 
+    border: 2px solid var(--color-primary-accent);
+}
+
+.secondary-btn:hover {
+    /* NEW: Hover effect - lift and color swap */
+    background-color: white !important;
+    color: var(--color-primary-accent) !important;
+    border: 2px solid var(--color-primary-accent);
+    transform: translateY(-2px); /* Slight lift */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.contact-image-placeholder {
+    height: 100%; 
+    width: 100%;
+    min-height: 0; 
+    border-radius: 0;
+    overflow: hidden; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    background: none; 
+    transform: none;
+    transition: none;
+    position: relative; 
+}
+
+/* This targets the anchor tag inside the placeholder */
+.contact-image-placeholder a {
+    width: 100%;
+    height: 100%;
+    display: block; /* Make the link cover the entire image area */
+}
+
+/* This targets the actual image element and ensures it covers its container */
+.contact-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+
+/* ======================================
+    6. Footer
+    ======================================
+*/
+.main-footer {
+    background-color: var(--color-footer-base);
+    color: var(--color-footer-text);
+    padding: 40px 0 0; 
+}
+
+.footer-grid {
+    display: grid;
+    /* Adjusted for better spacing: 2fr for brand info, 1fr/1fr for others */
+    grid-template-columns: minmax(200px, 2fr) repeat(2, minmax(150px, 1fr)); 
     gap: 30px;
-}
-
-.footer-col {
-    width: 200px; 
-}
-
-.brand-info {
-    width: 300px; 
+    margin-bottom: 30px;
 }
 
 .footer-col h3 {
-    color: var(--byte-orange); 
-    margin-bottom: 10px;
-    font-size: 1.5em;
-}
-
-.footer-col h4 {
-    color: var(--text-light); 
-    font-size: 1.1em;
+    font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 15px;
-    padding-bottom: 5px;
-    border-bottom: 2px solid var(--byte-orange); 
-    display: inline-block;
+    color: var(--color-primary-accent);
+    
+    /* NEW: Heading Underline and Alignment */
+    display: inline-block; 
+    padding-bottom: 5px; 
+    border-bottom: 2px solid var(--color-primary-accent); 
+    
+    /* Ensure only Quick Links and Legal Policies headings are affected in the second and third columns */
+    text-align: left; 
 }
+
+.brand-info {
+    text-align: left;
+}
+
+.footer-logo {
+    text-align: left;
+}
+
+/* Target H3 headings specifically in the Quick Links and Legal/Policies columns (2nd and 3rd) */
+.footer-grid > .footer-col:nth-child(2) h3,
+.footer-grid > .footer-col:nth-child(3) h3 {
+    /* Apply the underline and alignment only to these two columns for consistency with the visual layout */
+    display: inline-block;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--color-primary-accent);
+    text-align: left;
+    margin-bottom: 15px; 
+}
+
+/* Ensure the brand info h3 does NOT have the underline */
+.footer-grid > .footer-col:first-child h3 {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
 
 .footer-col ul {
     list-style: none;
 }
 
-.footer-col ul li {
-    margin-bottom: 8px;
-}
-
+/* Restyle Footer Links */
 .footer-col a {
-    color: #ccc;
-    text-decoration: none;
-    transition: color 0.2s;
+    color: white; 
+    opacity: 1; 
+    transition: all 0.2s;
+    font-size: 0.95rem;
+    padding-bottom: 2px;
+    display: block; 
+    line-height: 2; 
 }
 
 .footer-col a:hover {
-    color: var(--byte-orange);
+    color: var(--color-primary-accent); 
+    border-bottom: 1px solid var(--color-primary-accent); 
+    opacity: 1;
 }
 
-.contact-detail p {
-    margin-bottom: 5px;
+/* --- New Rules for Inline Contact Links (Desktop View) --- */
+.contact-inline-group {
+    color: var(--color-footer-text); 
+    margin-bottom: 10px; 
+    /* Ensures the group starts on a new line after the tagline */
+    display: block; 
 }
 
-/* Footer Bottom Section */
+.contact-inline-group span {
+    /* Makes the contact info flow horizontally */
+    display: inline; 
+    /* Prevents a long link/number from breaking onto a new line, keeps the separator in place */
+    white-space: nowrap; 
+    font-size: 0.95rem;
+}
+
+.contact-inline-group a {
+    /* Overrides the 'display: block' and 'line-height: 2' from .footer-col a for this specific group */
+    display: inline; 
+    line-height: normal; 
+    padding-bottom: 0; 
+    border-bottom: none; 
+}
+
+.contact-inline-group a:hover {
+    /* Re-apply hover specifically for the inline links */
+    border-bottom: 1px solid var(--color-primary-accent); 
+}
+
+.contact-inline-group .separator {
+    opacity: 0.7;
+    margin: 0 5px;
+}
+/* --- End Inline Contact Rules --- */
+
+
+/* --- New Footer Bottom Styling for Centered Links and Copyright --- */
 .footer-bottom {
-    border-top: 1px solid #333;
-    padding: 15px 20px;
-    text-align: center;
-    background-color: #1a1a1a;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); 
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    gap: 15px;
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
 
-.social-links a {
-    color: #ccc;
-    margin: 0 10px;
-    text-decoration: none;
-    font-weight: 600;
+.social-links-container {
+    display: flex;
+    gap: 25px; 
+    margin-bottom: 5px; 
 }
 
-.social-links a:hover {
-    color: var(--byte-orange);
+.social-icon {
+    font-size: 1.5rem;
+    color: var(--color-footer-text); 
+    transition: color 0.3s, transform 0.3s;
 }
 
-.copyright {
-    margin-top: 10px;
-    font-size: 0.8em;
+.social-icon:hover {
+    color: var(--color-primary-accent); 
+    transform: scale(1.1);
 }
 
-
-/* --- MEDIA QUERIES (Responsiveness) --- */
-@media (max-width: 768px) {
-    .hero-zone h2 {
-        font-size: 2.2em;
+/* ======================================
+    7. Media Queries (Responsiveness)
+    ======================================
+*/
+@media (min-width: 768px) {
+    /* Header layout for tablets and desktops */
+    .header-content {
+        grid-template-columns: 1fr; 
     }
 
-    .hero-zone p {
-        font-size: 1em;
-    }
-
-    nav a {
-        display: block;
-        margin: 5px 0;
+    /* Center search and toggle section on desktop/tablet */
+    .header-right {
+        max-width: 800px;
+        margin: 0 auto; 
+        justify-content: space-between; 
     }
     
-    /* Footer responsiveness */
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
+    .search-bar {
+        flex-grow: 1;
+        max-width: 800px;
+        margin-right: 20px;
+    }
+
+    /* Keep nav centered below logo */
+    nav {
+        order: 2;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 900px) {
+    /* Contact Section adjustments for stacking */
+    .contact-grid-full {
+        grid-template-columns: 1fr;
+        height: auto; 
+        min-height: 400px; 
+        max-width: 100%; 
+        width: 100%; 
+        margin-left: 0; 
+    }
+    
+    .contact-info-block {
+        text-align: center;
+        padding: 40px 15px;
+        justify-content: center;
+        padding-left: 15px; 
+        padding-right: 15px; 
+    }
+    
+    .contact-info-content {
+        /* FIX: Constrain and center content block on mobile */
+        max-width: 450px; 
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    .contact-info-block h2 {
+        text-align: center;
+    }
+    
+    .contact-image-placeholder {
+        min-height: 250px; 
+        height: 250px;
+        max-width: 100%; 
+    }
+    
+    /* Adjust footer grid to stack on smaller screens */
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Center footer content when stacked */
+    .brand-info {
         text-align: center;
     }
 
-    .footer-col {
+    .footer-logo {
+        text-align: center;
+    }
+
+    .footer-col h3 {
+        text-align: center;
+        /* Center the inline block for the heading underline */
+        display: block; 
+    }
+
+    .footer-grid > .footer-col:nth-child(2) h3,
+    .footer-grid > .footer-col:nth-child(3) h3 {
+        border-bottom: 2px solid var(--color-primary-accent); 
+        display: inline-block; 
+    }
+    
+    .footer-col ul {
+        text-align: center;
+    }
+    
+    .footer-col a {
+        display: inline-block; 
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 640px) {
+    /* --- NEW/MODIFIED MOBILE FOOTER CONTACT RULES --- */
+    .contact-inline-group {
+        /* On small screens, force contact info to stack vertically */
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+    .contact-inline-group span {
+        display: block; /* Stack them vertically */
+        white-space: normal; /* Allow text to wrap if necessary */
+        margin: 5px 0; /* Add vertical spacing between contact methods */
+    }
+    .contact-inline-group .separator {
+        display: none; /* Hide separators when stacked */
+    }
+    /* --- END NEW/MODIFIED MOBILE FOOTER CONTACT RULES --- */
+    
+    .header-right {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .search-bar {
         width: 100%;
-        margin-bottom: 20px;
+        margin-right: 0;
+    }
+
+    .theme-toggle {
+        align-self: flex-end;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    /* FIX: Center footer contents on mobile */
+    .footer-col {
+        text-align: center;
+    }
+    .brand-info {
+        text-align: center;
+    }
+    .footer-logo {
+        text-align: center;
+    }
+    /* Contact grid handled by 900px query */
+
+    .secondary-btn {
+        width: 100%;
     }
     
-    .footer-col h4 {
-        border-bottom: none; 
-    }
-    
-    .legal-content {
-        margin: 20px 10px;
-        padding: 15px;
+    /* Footer bottom centering remains correct due to flexbox rules */
+    .footer-bottom {
+        padding: 15px 0;
     }
 }
