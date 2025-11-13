@@ -50,39 +50,43 @@ document.addEventListener('DOMContentLoaded', () => {
     /**
      * Creates and displays a custom modal message.
      */
-    function showModal(title, message, whatsappLink) {
-        // Ensure only one modal is active
-        document.querySelector('.custom-modal-overlay')?.remove();
-        
-        const modalHTML = `
-            <div class="custom-modal-overlay">
-                <div class="custom-modal-content">
-                    <h3 style="color: var(--color-primary-accent);">${title}</h3>
-                    <p>${message}</p>
-                    <div style="margin-top: 20px; display: flex; justify-content: space-around;">
-                        <button class="modal-close-btn" style="background-color: #ccc; color: var(--color-text);">Close</button>
-                        <a href="${whatsappLink}" target="_blank" class="modal-whatsapp-btn primary-btn" style="background-color: var(--color-success);">
-                            <i class="fab fa-whatsapp"></i> Chat to Order
-                        </a>
-                    </div>
+    /**
+ * Creates and displays a custom modal message.
+ */
+function showModal(title, message, whatsappLink) {
+    // Ensure only one modal is active
+    document.querySelector('.custom-modal-overlay')?.remove();
+    
+    // REMOVED INLINE STYLING from the buttons and the wrapper div
+    const modalHTML = `
+        <div class="custom-modal-overlay">
+            <div class="custom-modal-content">
+                <h3 style="color: var(--color-primary-accent);">${title}</h3>
+                <p>${message}</p>
+                <div class="modal-button-wrapper">
+                    <button class="modal-close-btn">Close</button>
+                    <a href="${whatsappLink}" target="_blank" class="modal-whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Chat to Order
+                    </a>
                 </div>
             </div>
-        `;
-        
-        document.body.insertAdjacentHTML('beforeend', modalHTML);
-        
-        // Attach close listener
-        document.querySelector('.modal-close-btn').addEventListener('click', () => {
+        </div>
+    `;
+    
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    
+    // Attach close listener
+    document.querySelector('.modal-close-btn').addEventListener('click', () => {
+        document.querySelector('.custom-modal-overlay').remove();
+    });
+    
+    // Allow clicking the overlay to close
+    document.querySelector('.custom-modal-overlay').addEventListener('click', (e) => {
+        if (e.target.classList.contains('custom-modal-overlay')) {
             document.querySelector('.custom-modal-overlay').remove();
-        });
-        
-        // Allow clicking the overlay to close
-        document.querySelector('.custom-modal-overlay').addEventListener('click', (e) => {
-            if (e.target.classList.contains('custom-modal-overlay')) {
-                document.querySelector('.custom-modal-overlay').remove();
-            }
-        });
-    }
+        }
+    });
+}
 
     /**
      * Attaches click listeners to all '.order-btn' elements.
@@ -107,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const message = `Hello ByteMart+! I would like to order the ${productName} priced at ${productPrice}.`;
         
         // Pre-fill the WhatsApp message and link to the dedicated WhatsApp contact
-        const whatsappLink = `https://wa.me/256779315934?text=${encodeURIComponent(message)}`;
+        const whatsappLink = `https://wa.me/256705041411?text=${encodeURIComponent(message)}`;
         
         showModal(
             'Confirm Your Order',
