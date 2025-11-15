@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteMart+ | Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Assets/CSS/style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        // Theme preference script (copied from your original code)
+        const savedTheme = localStorage.getItem('theme') || 'light-mode';
+        document.documentElement.className = savedTheme;
+        if (savedTheme === 'dark-mode') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+
+    <style>
+        /* Shared Styles (Copied from your terms.html <style> block for consistency) */
+        
+        /* HEADER STYLING */
+        .policy-header {
+            background: #3e5870; /* Dark blue-teal color */
+            color: white;
+            padding: 60px 0;
+            text-align: center; 
+        }
+
+        .policy-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .policy-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* CORE CONTENT STYLES */
+        .contact-content {
+            padding: 40px 20px 60px 20px; 
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-container {
+            padding: 40px; 
+            border-radius: 12px; 
+            /* LIGHT MODE: Default white background */
+            background-color: var(--color-bg-primary, #ffffff); 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+        }
+
+        /* Dark Mode Container: Ensure it uses the specified dark blue color #3e5870 */
+        html[data-theme="dark"] .contact-container, .dark-mode .contact-container {
+            background-color: #3e5870; 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); 
+            color: white; /* Ensure all text inside is white by default */
+        }
+        
+        /* Section Title Styling */
+        .section-title {
+            font-size: 1.8rem;
+            color: #fb7420; /* FORCE ORANGE */
+            border-bottom: 2px solid var(--color-border, #ddd);
+            padding-bottom: 10px;
+            margin-top: 50px; 
+            margin-bottom: 30px;
+            text-align: center; 
+        }
+        
+        .section-title i {
+            margin-right: 10px;
+            color: #fb7420;
+        }
+        
+        /* Dark Mode override for section title border */
+        html[data-theme="dark"] .section-title, .dark-mode .section-title {
+            color: #fb7420;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3); 
+        }
+
+        /* NEW STYLES for Contact Form and Info */
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            color: var(--color-primary, #354451);
+            margin-bottom: 15px;
+        }
+        
+        /* Dark mode info heading color */
+        html[data-theme="dark"] .contact-info h3, .dark-mode .contact-info h3 {
+            color: white;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .info-item i {
+            color: #fb7420; /* Orange icon */
+            font-size: 1.3rem;
+            width: 30px;
+            text-align: center;
+        }
+
+        .info-item a, .info-item span {
+            color: var(--color-text, #354451);
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info a {
+            transition: color 0.3s;
+        }
+        
+        .contact-info a:hover {
+            color: #fb7420;
+        }
+        
+        /* Dark mode info text color */
+        html[data-theme="dark"] .info-item a, .dark-mode .info-item a, 
+        html[data-theme="dark"] .info-item span, .dark-mode .info-item span {
+            color: #e0e0e0;
+        }
+
+
+        /* Form Styling */
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form h3 {
+            font-size: 1.5rem;
+            color: var(--color-primary, #354451);
+            margin-bottom: 15px;
+        }
+        
+        /* Dark mode form heading color */
+        html[data-theme="dark"] .contact-form h3, .dark-mode .contact-form h3 {
+            color: white;
+        }
+
+        .contact-form label {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--color-text, #354451);
+        }
+        
+        /* Dark mode form label color */
+        html[data-theme="dark"] .contact-form label, .dark-mode .contact-form label {
+            color: white;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            padding: 12px;
+            border: 1px solid var(--color-border, #ccc);
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: var(--color-bg-primary, white);
+            color: var(--color-text, #354451);
+            transition: border-color 0.3s;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #fb7420;
+            outline: none;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        /* Dark mode form field colors */
+        html[data-theme="dark"] .contact-form input,
+        html[data-theme="dark"] .contact-form textarea {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .contact-form button {
+            background-color: #fb7420; /* Orange Button */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #e66517; /* Darker orange on hover */
+        }
+        
+        /* --- NEW REVIEW SECTION STYLES --- */
+        .reviews-section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: var(--color-bg-light, #f4f7f9); 
+        }
+
+        /* Dark mode background for review section */
+        html[data-theme="dark"] .reviews-section, .dark-mode .reviews-section {
+            background-color: var(--color-bg-dark, #24303b);
+        }
+        
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background-color: var(--color-bg-primary, #ffffff);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            border-top: 5px solid #fb7420; /* Orange accent bar */
+        }
+
+        /* Dark mode review card */
+        html[data-theme="dark"] .review-card, .dark-mode .review-card {
+            background-color: #3e5870; /* Use the dark blue-teal */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .review-pfp {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ccc; /* Placeholder color */
+            margin-right: 15px;
+            object-fit: cover;
+            /* Placeholder Image (Use an actual path if you have images) */
+            /* INSTRUCTION: Replace the background image URL with actual user profile pictures if available. */
+            background-image: url('Assets/images/pfp-placeholder.png'); 
+            background-size: cover;
+            border: 2px solid #fb7420;
+        }
+
+        .review-card .stars {
+            color: #fb7420; /* Orange Stars */
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+        
+        .review-card .stars i {
+            margin-right: 1px;
+        }
+
+        .review-card p.quote {
+            font-style: italic;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: var(--color-text, #354451);
+        }
+        
+        html[data-theme="dark"] .review-card p.quote, .dark-mode .review-card p.quote {
+            color: #e0e0e0;
+        }
+
+        .review-card p.author-name {
+            font-weight: 600;
+            color: var(--color-primary, #354451);
+            margin: 0;
+            font-size: 1rem;
+        }
+        
+        html[data-theme="dark"] .review-card p.author-name, .dark-mode .review-card p.author-name {
+            color: white;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .policy-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .policy-header p {
+                font-size: 1rem;
+            }
+            
+            .contact-container {
+                padding: 20px;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .review-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<header>
+        <div class="container header-content">
+            <div class="logo">
+                ByteMart<span class="logo-plus">+</span>
+                <p class="tagline">Tech Made Simple</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#phones">Phones</a></li>
+                    <li><a href="index.html#accessories">Accessories</a></li>
+                    <li><a href="news.html">Blog & News</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li> 
+                </ul>
+            </nav>
+            <div class="header-right">
+                <div class="search-bar rounded-search">
+                    <input type="text" id="search-input" placeholder="Search anything Phones, Accessories....">
+                    <button class="search-btn"></button>
+                </div>
+                <button id="theme-toggle" class="theme-toggle futuristic-toggle" aria-label="Toggle dark and light mode">
+                    <i class="fas fa-sun sun-icon"></i>
+                    <i class="fas fa-moon moon-icon"></i>
+                </button>
+            </div>
+        </div>
+        <div id="search-results" class="container" style="display: none; padding-top: 20px; padding-bottom: 20px;">
+            <h2 style="text-align: left; margin-bottom: 15px; font-size: 1.8rem;" id="search-results-title">Search Results</h2>
+            <div class="product-grid" id="search-results-grid">
+                </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="policy-header">
+            <div class="container">
+                <h1>Contact ByteMart+</h1>
+                <p>We're here to help! Reach out for sales support, technical help, or inquiries.</p>
+            </div>
+        </section>
+        
+        <section class="contact-content">
+            <div class="contact-container">
+                <h2 class="section-title"><i class="fas fa-headset"></i> Get In Touch</h2>
+                
+                <div class="contact-grid">
+                    
+                    <div class="contact-info">
+                        <h3>Our Details</h3>
+                        <p>Our online support team is available during business hours to assist you quickly and efficiently.</p>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Operations Hub: Kampala, Uganda (Online-Only Store)</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:bytemartug@gmail.com">bytemartug@gmail.com</a>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+256705041411">+256 705 041 411 (Call Support)</a>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/256779315934" target="_blank">+256 779 315 934 (WhatsApp Sales)</a>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="far fa-clock"></i>
+                            <span>Mon - Fri: 9:00 AM - 5:00 PM (EAT)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h3>Send Us a Message</h3>
+                        <form action="mailto:bytemartug@gmail.com" method="GET" enctype="text/plain">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="Name" placeholder="Enter your full name" required>
+
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="Email" placeholder="e.g. example@mail.com" required>
+
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="Subject" placeholder="e.g. Order Inquiry #BM1234" required>
+
+                            <label for="message">Message</label>
+                            <textarea id="message" name="Body" placeholder="Type your message here..." required></textarea>
+
+                            <button type="submit">Submit Inquiry</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="reviews-section">
+            <div class="container">
+                <h2 class="section-title"><i class="fas fa-users"></i> What Our Customers Say</h2>
+                <p class="intro-text" style="text-align: center; max-width: 900px; margin: 0 auto 40px auto; color: var(--color-text-faded, #555);">
+                    We pride ourselves on excellent service and quality tech. Read what users in Uganda think of ByteMart+.
+                </p>
+
+                <div class="review-grid">
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-pfp" style="background-image: url('Assets/images/david-pfp.jpg');"></div> 
+                            <div>
+                                <p class="author-name">David M.</p>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="quote">"Got my iPhone 15 delivered same-day in Kansanga, as promised! Excellent quality and the best price I could find online. Highly recommend ByteMart+ for reliable tech."</p>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-pfp" style="background-image: url('Assets/images/Khader.jpg');"></div>
+                            <div>
+                                <p class="author-name">Hakim K.</p>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="quote">"Fast response on WhatsApp support when I had a question about my smartwatch order. The smartwatch got delivered in good shape. Very satisfied with my purchase and the customer care."</p>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-pfp" style="background-image: url('Assets/images/Tiyya.jpg');"></div>
+                            <div>
+                                <p class="author-name">Tiyya S.</p>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="quote">"I loved the payment options personally used Mobile Money Payment. The phone was well-packaged and arrived in perfect condition directly to my workplace in Ntinda. ByteMart+ is my new go to tech store."</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <h2 class="section-title" style="margin-top: 20px;"><i class="fas fa-map-marked-alt"></i> Our Location Focus</h2>
+        <section style="text-align: center; padding-bottom: 40px;">
+            <p class="intro-text" style="text-align: center; max-width: 900px; margin: 0 auto 20px auto; color: var(--color-text, #354451);">
+                As an online-only store, our operations are managed from our central hub in **Kampala**, ensuring rapid delivery across the city.
+            </p>
+            <div style="max-width: 900px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15958.941908007223!2d32.55620986756889!3d0.3150530777977457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177c7b0d7721867b%3A0x6e9a6564619a933!2sKampala!5e0!3m2!1sen!2sug!4v1709292600000!5m2!1sen!2sug" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <div class="contact-section" id="contact">
+            <div class="contact-grid-full"> 
+                <div class="contact-info-block container"> <div class="contact-info-content"> <h2 style="color: white;">Get in Touch</h2>
+                            <p style="color: white;">Ready to Purchase an item or you want to inquire reach out to us.</p>
+                            <a href="https://wa.me/256705041411" target="_blank" class="btn secondary-btn chat-btn" style="background-color: #fb7420; color: white;">CHAT WITH US</a>
+                        </div>
+                </div>
+                <div class="contact-image-placeholder">
+                    <img src="Assets/images/customer service.jpg" alt="Customer support representative with a headset" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+
+        <div class="main-footer">
+            <div class="container footer-grid">
+                
+                <div class="footer-col brand-info">
+                    
+                    <div class="logo footer-logo">
+                        ByteMart<span class="logo-plus">+</span>
+                    </div>
+                    <p class="tagline-footer">Tech Made Simple. Your trusted source for the latest phones and accessories in Uganda.</p>
+                    
+                    <h3 class="footer-col-title contact-heading">Get in Touch</h3>
+                    
+                    <div class="contact-inline-group">
+                        <span>Email: <a href="mailto:bytemartug@gmail.com" class="footer-link">bytemartug@gmail.com</a></span>
+                        <span class="separator"> | </span>
+                        <span>Call Us: <a href="tel:+256705041411" class="footer-link">+256705041411</a></span>
+                        <span class="separator"> | </span>
+                        <span>WhatsApp Us: <a href="https://wa.me/256779315934" target="_blank" class="footer-link">+256779315934</a></span>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-col-title">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="index.html#products" class="footer-link">All Products</a></li>
+                        <li><a href="index.html#about" class="footer-link">About Us</a></li>
+                        <li><a href="news.html" class="footer-link">Blog & News</a></li>
+                        <li><a href="faq.html" class="footer-link">FAQ</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li> </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-col-title">Legal & Policies</h3>
+                    <ul>
+                        <li><a href="terms.html" class="footer-link">Terms & Conditions</a></li>
+                        <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="shipping.html" class="footer-link">Shipping & Delivery</a></li>
+                        <li><a href="returns.html" class="footer-link">Returns & Exchange</a></li>
+                        <li><a href="payment.html" class="footer-link">Payment Methods</a></li>
+                        <li><a href="faq.html" class="footer-link">FAQ</a></li>
+                    </ul>
+                </div>
+                
+            </div> 
+            <div class="footer-bottom">
+        <div class="social-links-container">
+            <a href="https://www.tiktok.com/@bytemartug?_r=1&_t=ZM-91AaSx4SEKe" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/ByteMartUG?t=SZDLdSw6kAMF5B9GpE1fRg&s=09" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/bytemartug?igsh=czJmNjI4ancyZTA4" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://whatsapp.com/channel/0029Vb71CnjA2pLGjsQqC81J" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
+            <p>© <span id="current-year">2024</span> ByteMart+. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="Assets/JS/main.js"></script>
+</body>
+</html>
